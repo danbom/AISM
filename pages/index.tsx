@@ -1,28 +1,35 @@
 import type { NextPage } from "next";
-import { Grid } from "@nextui-org/react";
+import { Grid, Card, Text, Button, Tooltip } from "@nextui-org/react";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import { Card4 } from "../components/Card4";
+import { CardComponent } from "../components/CardComponent";
+
+import styled from "styled-components";
 
 const Home: NextPage = () => {
   return (
     <div>
+      {/* <StyledText size={30} weight="bold">
+        기술과 사람으로
+        <br />더 나은 세상을 만듭니다.
+      </StyledText> */}
+
       <Grid.Container gap={2} justify="center">
         <Grid xs={12} sm={4}>
-          <Card4 />
+          <CardComponent />
         </Grid>
         <Grid xs={12} sm={4}>
-          <Card4 />
+          <CardComponent />
         </Grid>
         <Grid xs={12} sm={4}>
-          <Card4 />
+          <CardComponent />
         </Grid>
         <Grid xs={12} sm={5}>
-          <Card4 />
+          <CardComponent />
         </Grid>
         <Grid xs={12} sm={7}>
-          <Card4 />
+          <CardComponent />
         </Grid>
       </Grid.Container>
     </div>
@@ -91,3 +98,5 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+const StyledText = styled(Text)``;

@@ -1,6 +1,6 @@
 import { Card, Col, Row, Button, Text } from "@nextui-org/react";
 
-export const Card4 = () => (
+export const CardComponent = () => (
   <Card cover css={{ w: "100%" }}>
     <Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
       <Col>
