@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Grid, Text, Container, Tooltip } from "@nextui-org/react";
 import {
@@ -14,6 +14,17 @@ import styled from "styled-components";
 
 const Header = () => {
   const [expended, setExpended] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    function scrollListener() {
+      window.addEventListener("scroll", detectScrollY);
+    } //  window 에서 스크롤을 감시 시작
+    scrollListener(); // window 에서 스크롤을 감시
+    return () => {
+      window.removeEventListener("scroll", detectScrollY);
+    }; //  window 에서 스크롤을 감시를 종료
+  });
 
   const Logo = (
     <Link href="/">
@@ -88,9 +99,13 @@ const Header = () => {
     setExpended(!expended);
   };
 
+  const detectScrollY = () => {
+    setScrollY(window.pageYOffset);
+  };
+
   return (
     <StyledHeader>
-      <BigGrid justify="center">
+      <BigGrid justify="center" istop={(scrollY == 0).toString()}>
         <Container display="flex">
           <Grid xs alignItems="center">
             {Logo}
@@ -182,6 +197,7 @@ const StyledGrid = styled(Grid)`
   align-items: center;
   width: 100%;
   height: 100%;
+  transition: 0.3s ease;
 
   @media screen and (min-width: 960px) {
     backdrop-filter: saturate(180%) blur(10px);
@@ -189,20 +205,28 @@ const StyledGrid = styled(Grid)`
   }
 `;
 
-const BigGrid = styled(StyledGrid)`
+interface IsTopProps {
+  istop?: string;
+}
+
+const BigGrid = styled(StyledGrid)<IsTopProps>`
+  box-shadow: ${(props) =>
+    props.istop == "true" ? "none" : "rgb(2 1 1 / 10%) 0px 5px 20px -5px"};
+
   @media screen and (max-width: 960px) {
     display: none;
   }
 `;
 
 const SmallGrid = styled(StyledGrid)`
+  background: hsla(0, 0%, 100%, 0.95);
   @media screen and (min-width: 960px) {
     display: none;
   }
 `;
 
 const ExpendedGrid = styled(Grid)`
-  background: hsla(0, 0%, 100%, 0.8);
+  background: hsla(0, 0%, 100%, 0.95);
   display: flex;
   align-items: center;
   width: 100%;
