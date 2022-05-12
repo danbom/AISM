@@ -1,14 +1,21 @@
-import { Card, Col, Row, Button, Text } from "@nextui-org/react";
+import { Card, Text } from "@nextui-org/react";
+import styled from "styled-components";
 
 export const CardComponent = () => (
   <Card cover css={{ w: "100%" }}>
-    <Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
+    <Card.Header
+      css={{
+        position: "absolute",
+        zIndex: 1,
+        top: 5,
+      }}
+    >
       <Col>
         <Text size={12} weight="bold" transform="uppercase" color="#ffffffAA">
           New
         </Text>
         <Text h3 color="white">
-          AISM 소식
+          News
         </Text>
       </Col>
     </Card.Header>
@@ -31,29 +38,47 @@ export const CardComponent = () => (
       }}
     >
       <Row>
-        <Col>
-          <Text color="#000" size={12}>
-            Available soon.
-          </Text>
-          <Text color="#000" size={12}>
-            Get notified.
-          </Text>
-        </Col>
-        <Col>
-          <Row justify="flex-end">
-            <Button flat auto rounded color="secondary">
-              <Text
-                css={{ color: "inherit" }}
-                size={12}
-                weight="bold"
-                transform="uppercase"
-              >
-                Notify Me
-              </Text>
-            </Button>
-          </Row>
-        </Col>
+        <StyledDiv>
+          <Col>
+            <Text color="#000" size={12}>
+              Available soon.
+            </Text>
+            <Text color="#000" size={12}>
+              Get notified.
+            </Text>
+          </Col>
+          {/* <Col>
+            <Row>
+              <Button flat auto rounded color="secondary">
+                <Text
+                  css={{ color: "inherit" }}
+                  size={12}
+                  weight="bold"
+                  transform="uppercase"
+                >
+                  Notify Me
+                </Text>
+              </Button>
+            </Row>
+          </Col> */}
+        </StyledDiv>
       </Row>
     </Card.Footer>
   </Card>
 );
+
+const Col = styled.div`
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+`;
+
+const Row = styled.div`
+  width: 100%;
+  display: flex;
+`;
+
+const StyledDiv = styled.div`
+  width: 100%;
+  display: space-between;
+`;
