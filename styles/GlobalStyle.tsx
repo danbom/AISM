@@ -5,7 +5,7 @@ const globalStyle = css`
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    color: #111111;
+    color: #212121;
   }
 
   body {
