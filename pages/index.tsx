@@ -1,8 +1,6 @@
 import type { NextPage } from "next";
 import { Grid } from "@nextui-org/react";
 
-import { CardComponent } from "../components/CardComponent";
-
 // import styled from "styled-components";
 
 const Home: NextPage = () => {
