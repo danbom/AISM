@@ -13,7 +13,7 @@ const Home: NextPage = () => {
         <br />더 나은 세상을 만듭니다.
       </StyledText> */}
 
-      <Grid.Container gap={2} justify="center">
+      {/* <Grid.Container gap={2} justify="center">
         <Grid xs={12} sm={4}>
           <CardComponent />
         </Grid>
@@ -29,7 +29,7 @@ const Home: NextPage = () => {
         <Grid xs={12} sm={7}>
           <CardComponent />
         </Grid>
-      </Grid.Container>
+      </Grid.Container> */}
     </div>
     // <div className={styles.container}>
     //   <Head>
