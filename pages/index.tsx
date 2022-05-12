@@ -1,11 +1,9 @@
 import type { NextPage } from "next";
-import { Grid, Card, Text, Button, Tooltip } from "@nextui-org/react";
-import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
+import { Grid } from "@nextui-org/react";
+
 import { CardComponent } from "../components/CardComponent";
 
-import styled from "styled-components";
+// import styled from "styled-components";
 
 const Home: NextPage = () => {
   return (
@@ -98,5 +96,3 @@ const Home: NextPage = () => {
 };
 
 export default Home;
-
-const StyledText = styled(Text)``;

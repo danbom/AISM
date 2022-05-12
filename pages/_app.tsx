@@ -1,6 +1,6 @@
 import type { AppProps } from "next/app";
 import Head from "next/head";
-import { NextUIProvider } from "@nextui-org/react";
+import { NextUIProvider, Container } from "@nextui-org/react";
 import styled from "styled-components";
 
 import Header from "../components/Header";
@@ -29,7 +29,3 @@ function MyApp({ Component, pageProps }: AppProps) {
 }
 
 export default MyApp;
-
-const Container = styled.div`
-  padding: 0 12rem;
-`;
