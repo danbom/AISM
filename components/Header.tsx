@@ -85,7 +85,7 @@ const Header = () => {
   const ExpendedMenu = (icon: JSX.Element, title: string) => (
     <Grid>
       <Link href={`/${title}`}>
-        <ExpendedMenuBtn>
+        <ExpendedMenuBtn onClick={toggleExpended}>
           {icon}
           <StyledText css={{ paddingLeft: "0.6rem" }} size={15} weight="medium">
             {title}
