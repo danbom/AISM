@@ -1,8 +1,5 @@
 import type { NextPage } from "next";
-import { Text, Button, Grid } from "@nextui-org/react";
-import styled from "styled-components";
-
-import { CardComponent } from "../components/Card";
+import { Text, Button } from "@nextui-org/react";
 
 const Home: NextPage = () => {
   return (
@@ -24,5 +21,3 @@ const Home: NextPage = () => {
 };
 
 export default Home;
-
-const StyledText = styled(Text)``;
