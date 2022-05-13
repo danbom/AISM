@@ -19,25 +19,6 @@ const Home: NextPage = () => {
           ABCD type
         </Button>
       </div>
-      <div>
-        <Grid.Container gap={2} justify="center">
-          <Grid xs={12} sm={4}>
-            <CardComponent />
-          </Grid>
-          <Grid xs={12} sm={4}>
-            <CardComponent />
-          </Grid>
-          <Grid xs={12} sm={4}>
-            <CardComponent />
-          </Grid>
-          <Grid xs={12} sm={5}>
-            <CardComponent />
-          </Grid>
-          <Grid xs={12} sm={7}>
-            <CardComponent />
-          </Grid>
-        </Grid.Container>
-      </div>
     </>
   );
 };
