@@ -69,7 +69,6 @@ export const CardComponent = ({
         aria-labelledby="modal-title"
         open={visible}
         onClose={closeHandler}
-        fullScreen
       >
         <Modal.Header css={{ flexDirection: "column" }}>
           <Text id="modal-title" b size={19}>
