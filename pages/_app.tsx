@@ -19,9 +19,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         <GlobalStyle />
         <NextUIProvider>
           <Header />
-          <Container>
+          <StyledContainer>
             <Component {...pageProps} />
-          </Container>
+          </StyledContainer>
         </NextUIProvider>
       </main>
     </>
@@ -29,3 +29,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 }
 
 export default MyApp;
+
+const StyledContainer = styled(Container)`
+  padding-top: 3rem;
+`;
