@@ -2,20 +2,13 @@ import type { NextPage } from "next";
 import { Text, Grid } from "@nextui-org/react";
 import { Notification } from "react-iconly";
 
+import noticeData from "../../data/noticeData.json";
 import { CardComponent } from "../../components/Card";
 
 const notice: NextPage = () => {
   return (
     <div>
-      <div
-        style={
-          {
-            // display: "flex",
-            // flexDirection: "column",
-            // alignItems: "center",
-          }
-        }
-      >
+      <div>
         <div style={{ display: "flex", alignItems: "center" }}>
           <Notification
             size={40}
@@ -28,12 +21,17 @@ const notice: NextPage = () => {
           </Text>
         </div>
 
-        <Text size={24}>가장 빠른 Logo 새소식 업데이트</Text>
+        <Text size={24}>사이트 및 교육 프로그램 관련 공지사항</Text>
       </div>
       <Grid.Container gap={2} justify="center">
-        {Array.from(Array(9), (_, i) => (
-          <Grid key={i} xs={12} sm={4}>
-            <CardComponent />
+        {noticeData.map((data, index) => (
+          <Grid key={index} xs={12} sm={4}>
+            <CardComponent
+              category={data.category}
+              title={data.title}
+              image={data.image}
+              tags={data.tag}
+            />
           </Grid>
         ))}
       </Grid.Container>
