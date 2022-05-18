@@ -1,6 +1,5 @@
 import type { NextPage } from "next";
 import { Grid } from "@nextui-org/react";
-import { Notification } from "react-iconly";
 
 import noticeData from "../../data/noticeData.json";
 import { CardComponent } from "../../components/Card";
@@ -10,14 +9,6 @@ const notice: NextPage = () => {
   return (
     <div>
       <PageTitle
-        icon={
-          <Notification
-            size={40}
-            set="bold"
-            primaryColor="#111111"
-            style={{ paddingTop: "0.3rem" }}
-          />
-        }
         title={"공지사항"}
         sub={"사이트 및 교육 프로그램 관련 공지사항"}
       />

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Grid, Text, Container, Tooltip } from "@nextui-org/react";
+import { Grid, Container, Tooltip } from "@nextui-org/react";
 import {
   Category,
   Work,
@@ -28,58 +28,46 @@ const Header = () => {
 
   const Logo = (
     <Link href="/">
-      <StyledText size={15} weight="medium">
-        Logo
-      </StyledText>
+      <MenuText>Logo</MenuText>
     </Link>
   );
 
   const Menu = (title: string) => (
-    <Grid>
-      <Link href={`/${title}`}>
-        <MenuBtn>
-          <StyledText size={15} weight="medium">
-            {title}
-          </StyledText>
-        </MenuBtn>
-      </Link>
-    </Grid>
+    <Link href={`/${title}`}>
+      <MenuBtn>
+        <MenuText>{title}</MenuText>
+      </MenuBtn>
+    </Link>
   );
 
   const MenuWithSub = (title: string, subMenu: JSX.Element) => (
-    <Grid>
-      <Tooltip
-        content={subMenu}
-        placement="bottom"
-        trigger="hover"
-        hideArrow
-        css={{ zIndex: 9999 }}
-      >
-        <Link href={`/${title}`}>
-          <MenuBtn>
-            <StyledText size={15} weight="medium">
-              {title}
-            </StyledText>
-          </MenuBtn>
-        </Link>
-      </Tooltip>
-    </Grid>
+    <Tooltip
+      content={subMenu}
+      placement="bottom"
+      trigger="hover"
+      hideArrow
+      css={{
+        zIndex: 9999,
+      }}
+    >
+      <Link href={`/${title}`}>
+        <MenuBtn>
+          <MenuText>{title}</MenuText>
+        </MenuBtn>
+      </Link>
+    </Tooltip>
   );
 
   const SubMenu = (menu: string, arr: Array<string>) => (
-    <Grid.Container gap={1}>
+    <div>
       {arr.map((title, index) => (
-        <Grid key={index}>
-          <Link href={`/${menu}/${title}`}>
-            <MenuBtn>
-              <StyledText size={13} weight="medium">
-                {title}
-              </StyledText>
-            </MenuBtn>
-          </Link>
-        </Grid>
+        <Link key={index} href={`/${menu}/${title}`}>
+          <MenuBtn>
+            <SubMenuText>{title}</SubMenuText>
+          </MenuBtn>
+        </Link>
       ))}
-    </Grid.Container>
+    </div>
   );
 
   const ExpendedMenu = (icon: JSX.Element, title: string) => (
@@ -87,9 +75,7 @@ const Header = () => {
       <Link href={`/${title}`}>
         <ExpendedMenuBtn onClick={toggleExpended}>
           {icon}
-          <StyledText css={{ paddingLeft: "0.6rem" }} size={15} weight="medium">
-            {title}
-          </StyledText>
+          <MenuText>{title}</MenuText>
         </ExpendedMenuBtn>
       </Link>
     </Grid>
@@ -111,7 +97,7 @@ const Header = () => {
             {Logo}
             {/* <StyledImg src="/static/image/AISM_logo_nodesc.png" alt="Logo" /> */}
           </Grid>
-          <Grid xs={7} justify="center">
+          <Grid xs={8} justify="center">
             <Grid.Container gap={2} justify="center">
               {MenuWithSub(
                 "introduce",
@@ -185,14 +171,15 @@ export default Header;
 
 const StyledHeader = styled.div`
   top: 0px;
-  height: 76px;
+  height: 84px;
   position: sticky;
   background: transparent;
   z-index: 100;
 `;
 
 const StyledGrid = styled(Grid)`
-  background: hsla(0, 0%, 100%, 0.8);
+  background: #f0f2fac7;
+  /* background: hsla(0, 0%, 100%, 0.8); */
   display: flex;
   align-items: center;
   width: 100%;
@@ -241,8 +228,9 @@ const MenuBtn = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0.4rem 0.8rem;
+  margin: 0 0.8rem;
   background: transparent;
-  padding: 0.6rem 1rem;
   min-width: min-content;
   border-radius: 14px;
   outline: none;
@@ -280,10 +268,18 @@ const ExpendedMenuBtn = styled(MenuBtn)`
   }
 `;
 
-const StyledText = styled(Text)`
-  font-weight: 500;
+const MenuText = styled.p`
+  margin: 0;
+  padding: 0;
+  font-family: "Nanum Square EB";
+  font-size: 1.1rem;
 
   &::first-letter {
     text-transform: uppercase;
   }
+`;
+
+const SubMenuText = styled(MenuText)`
+  font-family: "Nanum Square B";
+  font-size: 0.9rem;
 `;

@@ -6,7 +6,6 @@ import styled from "styled-components";
 import Header from "../components/Header";
 
 import "../styles/globals.css";
-import GlobalStyle from "../styles/GlobalStyle";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -16,7 +15,6 @@ function MyApp({ Component, pageProps }: AppProps) {
         <title>aism</title>
       </Head>
       <main>
-        <GlobalStyle />
         <NextUIProvider>
           <Header />
           <StyledContainer>
@@ -31,5 +29,10 @@ function MyApp({ Component, pageProps }: AppProps) {
 export default MyApp;
 
 const StyledContainer = styled(Container)`
-  padding-top: 3rem;
+  padding: 8rem 10rem;
+  font-family: "Nanum Square B";
+
+  @media screen and (max-width: 960px) {
+    padding: 4rem 2rem;
+  }
 `;

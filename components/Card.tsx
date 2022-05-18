@@ -1,6 +1,8 @@
 import { useState } from "react";
-import { Card, Row, Text, Modal, Button } from "@nextui-org/react";
+import { Card, Row, Modal, Button } from "@nextui-org/react";
 import styled from "styled-components";
+
+import palette from "../styles/palette";
 
 export const CardComponent = ({
   data,
@@ -23,18 +25,13 @@ export const CardComponent = ({
   };
   return (
     <>
-      <Card cover css={{ w: "100%", cursor: "pointer" }} onClick={handler}>
-        <Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
-          <div style={{ padding: "0.5rem 0.8rem" }}>
-            <Badge category={data.category}>
-              <Text size={13} color="white">
-                {data.category}
-              </Text>
-            </Badge>
-            <Text weight="semibold" size={22} css={{ marginTop: "0.4rem" }}>
-              {data.title}
-            </Text>
-          </div>
+      <NoticeCard cover onClick={handler}>
+        <Card.Header className="card-header">
+          <Badge category={data.category}>
+            <img src="/static/image/icon/rocket.png" />
+            {data.category}
+          </Badge>
+          {data.title}
         </Card.Header>
         <Card.Body>
           <Card.Image src={data.image} height={400} width="100%" alt="" />
@@ -42,43 +39,46 @@ export const CardComponent = ({
         <Card.Footer
           blur
           css={{
-            position: "absolute",
             bgBlur: "#ffffff",
             borderTop: "$borderWeights$light solid rgba(255, 255, 255, 0.2)",
-            bottom: 0,
-            zIndex: 1,
           }}
+          className="card-footer"
         >
-          <Row>
-            {data.tag.map((tag, index) => (
-              <Text
-                key={index}
-                color="#000"
-                size={12}
-                css={{ paddingRight: "1rem" }}
-              >
-                # {tag}
-              </Text>
-            ))}
-          </Row>
+          {data.tag.map((tag, index) => (
+            <div key={index}># {tag}</div>
+          ))}
         </Card.Footer>
-      </Card>
+      </NoticeCard>
       <Modal
+        width="600px"
         closeButton
+        fullScreen
         blur
         aria-labelledby="modal-title"
         open={visible}
         onClose={closeHandler}
       >
-        <Modal.Header css={{ flexDirection: "column" }}>
-          <Text id="modal-title" b size={19}>
-            {data.title}
-          </Text>
-          <Text id="modal-title" size={14}>
-            {data.timestamp}
-          </Text>
+        <Modal.Header
+          css={{ flexDirection: "column", padding: "2rem 0 2rem 0" }}
+        >
+          {data.title}
+          {data.timestamp}
         </Modal.Header>
-        <Modal.Body css={{ whiteSpace: "pre-line" }}>{data.content}</Modal.Body>
+        <Modal.Body css={{ whiteSpace: "pre-line", padding: "0 8rem" }}>
+          <img
+            style={{
+              width: "700px",
+              paddingBottom: "1rem",
+            }}
+            src={data.image}
+          />
+          {data.content}
+          <div style={{ display: "flex" }}>
+            {data.tag.map((tag, index) => (
+              <div key={index}># {tag}</div>
+            ))}
+          </div>
+        </Modal.Body>
         <Modal.Footer>
           <Button auto flat color="error" onClick={closeHandler}>
             Close
@@ -89,16 +89,55 @@ export const CardComponent = ({
   );
 };
 
+const NoticeCard = styled(Card)`
+  width: 100%;
+  cursor: pointer;
+  box-shadow: none;
+
+  .card-header {
+    position: absolute;
+    z-index: 1;
+    top: 1rem;
+    left: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 1.7rem;
+    font-family: "Nanum Square EB";
+  }
+
+  .card-footer {
+    position: absolute;
+    bottom: 0.3rem;
+    left: 1rem;
+    z-index: 1;
+    font-size: 0.9rem;
+    font-family: "Nanum Square R";
+
+    div {
+      padding-right: 0.4rem;
+    }
+  }
+`;
+
 interface BadgeProps {
   category: string;
 }
 
 const Badge = styled.div<BadgeProps>`
   width: fit-content;
-  padding: 0.2rem 0.8rem;
-  border-radius: 15px;
-  background-color: ${(props) =>
-    props.category == "사이트" ? "#c1343ddd" : "#3C4694dd"};
-  box-shadow: 0 1px 8px 0
-    ${(props) => (props.category == "사이트" ? " #c1343dbb" : "#3C4694bb")};
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  font-size: 1.1rem;
+  font-family: "Nanum Square B";
+  color: #363636;
+  /* box-shadow: 0 1px 8px 0
+    ${(props) => (props.category == "사이트" ? " #c1343dbb" : "#3C4694bb")}; */
+
+  img {
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.3rem;
+  }
 `;
