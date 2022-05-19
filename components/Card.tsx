@@ -34,16 +34,9 @@ export const CardComponent = ({
           {data.title}
         </Card.Header>
         <Card.Body>
-          <Card.Image src={data.image} height={400} width="100%" alt="" />
+          <Card.Image src={data.image} width="100%" alt="" />
         </Card.Body>
-        <Card.Footer
-          blur
-          css={{
-            bgBlur: "#ffffff",
-            borderTop: "$borderWeights$light solid rgba(255, 255, 255, 0.2)",
-          }}
-          className="card-footer"
-        >
+        <Card.Footer blur className="card-footer">
           {data.tag.map((tag, index) => (
             <div key={index}># {tag}</div>
           ))}
@@ -108,14 +101,14 @@ const NoticeCard = styled(Card)`
 
   .card-footer {
     position: absolute;
-    bottom: 0.3rem;
-    left: 1rem;
+    bottom: 0;
     z-index: 1;
     font-size: 0.8rem;
     font-family: "Nanum Square R";
 
     div {
-      padding-right: 0.4rem;
+      padding-left: 0.4rem;
+      bottom: 0.3rem;
     }
   }
 `;
