@@ -12,19 +12,19 @@ const introduce: NextPage = () => {
         getBeforeInit={(instance) => {
           instance
             .type("물리치료사")
-            .pause(750)
+            .pause(1000)
             .delete()
             .pause(200)
             .type("헬스 트레이너")
-            .pause(750)
+            .pause(1000)
             .delete()
             .pause(200)
             .type("요가 강사")
-            .pause(750)
+            .pause(1000)
             .delete()
             .pause(200)
             .type("필라테스 강사")
-            .pause(750);
+            .pause(1000);
 
           // Remember to return it!
           return instance;
