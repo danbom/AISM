@@ -33,6 +33,6 @@ const StyledContainer = styled(Container)`
   font-family: "Nanum Square B";
 
   @media screen and (max-width: 960px) {
-    padding: 4rem 2rem;
+    padding: 4rem 1rem;
   }
 `;
