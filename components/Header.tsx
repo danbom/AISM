@@ -178,8 +178,7 @@ const StyledHeader = styled.div`
 `;
 
 const StyledGrid = styled(Grid)`
-  background: #f0f2fac7;
-  /* background: hsla(0, 0%, 100%, 0.8); */
+  background: hsla(0, 0%, 100%, 0.8);
   display: flex;
   align-items: center;
   width: 100%;

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Card, Row, Modal, Button } from "@nextui-org/react";
+import { Card, Modal, Button } from "@nextui-org/react";
 import styled from "styled-components";
 
 import palette from "../styles/palette";
@@ -102,7 +102,7 @@ const NoticeCard = styled(Card)`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     font-family: "Nanum Square EB";
   }
 
@@ -111,7 +111,7 @@ const NoticeCard = styled(Card)`
     bottom: 0.3rem;
     left: 1rem;
     z-index: 1;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     font-family: "Nanum Square R";
 
     div {
@@ -129,15 +129,15 @@ const Badge = styled.div<BadgeProps>`
   display: flex;
   align-items: center;
   border-radius: 20px;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-family: "Nanum Square B";
   color: #363636;
   /* box-shadow: 0 1px 8px 0
     ${(props) => (props.category == "사이트" ? " #c1343dbb" : "#3C4694bb")}; */
 
   img {
-    width: 1rem;
-    height: 1rem;
-    margin-right: 0.3rem;
+    width: 0.9rem;
+    height: 0.9rem;
+    margin-right: 0.2rem;
   }
 `;
