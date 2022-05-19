@@ -8,12 +8,29 @@ const introduce: NextPage = () => {
     <div>
       <PageTitle title={"Introduce"} sub={"AISM 소개"} />
       <TypeIt
-        options={{
-          strings: ["This will be typed!", "물리치료사"],
-          speed: 10,
-          waitUntilVisible: true,
+        options={{ loop: true }}
+        getBeforeInit={(instance) => {
+          instance
+            .type("물리치료사")
+            .pause(750)
+            .delete()
+            .pause(200)
+            .type("헬스 트레이너")
+            .pause(750)
+            .delete()
+            .pause(200)
+            .type("요가 강사")
+            .pause(750)
+            .delete()
+            .pause(200)
+            .type("필라테스 강사")
+            .pause(750);
+
+          // Remember to return it!
+          return instance;
         }}
       />
+      {""}가 되고 싶다면
       <div>
         AISM은 2013년 AMTI 학회를 시작으로 2016년 AISM 학회로 변경하여 현재에
         이르고 있습니다.
