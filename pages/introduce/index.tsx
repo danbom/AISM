@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import TypeIt from "typeit-react";
 import styled from "styled-components";
 
-import { PageTitle } from "../../components/PageTitle";
+// import { PageTitle } from "../../components/PageTitle";
 
 const introduce: NextPage = () => {
   return (

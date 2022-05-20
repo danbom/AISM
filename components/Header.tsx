@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Grid, Container, Tooltip } from "@nextui-org/react";
-import {
-  Category,
-  Work,
-  People,
-  Paper,
-  InfoSquare,
-  Message,
-  CloseSquare,
-} from "react-iconly";
+import { Grid, Container } from "@nextui-org/react";
+// import {
+//   Category,
+//   Work,
+//   People,
+//   Paper,
+//   InfoSquare,
+//   Message,
+//   CloseSquare,
+// } from "react-iconly";
 import styled from "styled-components";
 
 const Header = () => {
@@ -40,41 +40,41 @@ const Header = () => {
     </Link>
   );
 
-  const MenuWithSub = (title: string, subMenu: JSX.Element) => (
-    <Tooltip
-      content={subMenu}
-      placement="bottom"
-      trigger="hover"
-      hideArrow
-      css={{
-        zIndex: 9999,
-      }}
-    >
-      <Link href={`/${title}`}>
-        <MenuBtn>
-          <MenuText>{title}</MenuText>
-        </MenuBtn>
-      </Link>
-    </Tooltip>
-  );
+  // const MenuWithSub = (title: string, subMenu: JSX.Element) => (
+  //   <Tooltip
+  //     content={subMenu}
+  //     placement="bottom"
+  //     trigger="hover"
+  //     hideArrow
+  //     css={{
+  //       zIndex: 9999,
+  //     }}
+  //   >
+  //     <Link href={`/${title}`}>
+  //       <MenuBtn>
+  //         <MenuText>{title}</MenuText>
+  //       </MenuBtn>
+  //     </Link>
+  //   </Tooltip>
+  // );
 
-  const SubMenu = (menu: string, arr: Array<string>) => (
-    <div>
-      {arr.map((title, index) => (
-        <Link key={index} href={`/${menu}/${title}`}>
-          <MenuBtn>
-            <SubMenuText>{title}</SubMenuText>
-          </MenuBtn>
-        </Link>
-      ))}
-    </div>
-  );
+  // const SubMenu = (menu: string, arr: Array<string>) => (
+  //   <div>
+  //     {arr.map((title, index) => (
+  //       <Link key={index} href={`/${menu}/${title}`}>
+  //         <MenuBtn>
+  //           <SubMenuText>{title}</SubMenuText>
+  //         </MenuBtn>
+  //       </Link>
+  //     ))}
+  //   </div>
+  // );
 
-  const ExpendedMenu = (icon: JSX.Element, title: string) => (
+  const ExpendedMenu = (/*(icon: JSX.Element, */ title: string) => (
     <Grid>
       <Link href={`/${title}`}>
         <ExpendedMenuBtn onClick={toggleExpended}>
-          {icon}
+          {/* {icon} */}
           <MenuText>{title}</MenuText>
         </ExpendedMenuBtn>
       </Link>
@@ -99,7 +99,7 @@ const Header = () => {
           </Grid>
           <Grid xs={8} justify="center">
             <Grid.Container gap={2} justify="center">
-              {MenuWithSub(
+              {/* {MenuWithSub(
                 "introduce",
                 SubMenu("introduce", ["history", "goal", "props"])
               )}
@@ -109,7 +109,9 @@ const Header = () => {
                   "performance specialist",
                   "professional course",
                 ])
-              )}
+              )} */}
+              {Menu("introduce")}
+              {Menu("program")}
               {Menu("instructor")}
               {Menu("notice")}
               {Menu("faq")}
@@ -126,11 +128,11 @@ const Header = () => {
           </Grid>
           <Grid xs justify="flex-end">
             <MenuBtn onClick={toggleExpended}>
-              {expended ? (
+              {/* {expended ? (
                 <CloseSquare set="light" primaryColor="#212121" />
               ) : (
                 <Category set="light" primaryColor="#212121" />
-              )}
+              )} */}
             </MenuBtn>
           </Grid>
         </Container>
@@ -140,23 +142,23 @@ const Header = () => {
           <Container>
             <Grid.Container direction="column" gap={1}>
               {ExpendedMenu(
-                <Work set="light" primaryColor="#212121" />,
+                // <Work set="light" primaryColor="#212121" />,
                 "introduce"
               )}
               {ExpendedMenu(
-                <Paper set="light" primaryColor="#212121" />,
+                // <Paper set="light" primaryColor="#212121" />,
                 "program"
               )}
               {ExpendedMenu(
-                <People set="light" primaryColor="#212121" />,
+                // <People set="light" primaryColor="#212121" />,
                 "instructor"
               )}
               {ExpendedMenu(
-                <InfoSquare set="light" primaryColor="#212121" />,
+                // <InfoSquare set="light" primaryColor="#212121" />,
                 "notice"
               )}
               {ExpendedMenu(
-                <Message set="light" primaryColor="#212121" />,
+                // <Message set="light" primaryColor="#212121" />,
                 "faq"
               )}
             </Grid.Container>
@@ -278,7 +280,7 @@ const MenuText = styled.p`
   }
 `;
 
-const SubMenuText = styled(MenuText)`
-  font-family: "Nanum Square B";
-  font-size: 0.9rem;
-`;
+// const SubMenuText = styled(MenuText)`
+//   font-family: "Nanum Square B";
+//   font-size: 0.9rem;
+// `;

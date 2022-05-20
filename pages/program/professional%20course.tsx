@@ -1,5 +1,4 @@
 import type { NextPage } from "next";
-import { Graph } from "react-iconly";
 
 import { PageTitle } from "../../components/PageTitle";
 

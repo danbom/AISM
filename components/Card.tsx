@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Card, Modal, Button } from "@nextui-org/react";
 import styled from "styled-components";
 
-import palette from "../styles/palette";
+// import palette from "../styles/palette";
 
 export const CardComponent = ({
   data,
@@ -51,32 +51,32 @@ export const CardComponent = ({
         open={visible}
         onClose={closeHandler}
       >
-        <Modal.Header
-          css={{ flexDirection: "column", padding: "2rem 0 2rem 0" }}
-        >
+        <div>
           {data.title}
           {data.timestamp}
-        </Modal.Header>
-        <Modal.Body css={{ whiteSpace: "pre-line", padding: "0 8rem" }}>
-          <img
-            style={{
-              width: "700px",
-              paddingBottom: "1rem",
-            }}
-            src={data.image}
-          />
-          {data.content}
-          <div style={{ display: "flex" }}>
-            {data.tag.map((tag, index) => (
-              <div key={index}># {tag}</div>
-            ))}
+        </div>
+        <div style={{ whiteSpace: "pre-line", padding: "0 8rem" }}>
+          <div>
+            <img
+              style={{
+                width: "700px",
+                paddingBottom: "1rem",
+              }}
+              src={data.image}
+            />
+            {data.content}
+            <div style={{ display: "flex" }}>
+              {data.tag.map((tag, index) => (
+                <div key={index}># {tag}</div>
+              ))}
+            </div>
           </div>
-        </Modal.Body>
-        <Modal.Footer>
+        </div>
+        <div>
           <Button auto flat color="error" onClick={closeHandler}>
             Close
           </Button>
-        </Modal.Footer>
+        </div>
       </Modal>
     </>
   );
