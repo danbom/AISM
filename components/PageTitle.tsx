@@ -1,8 +1,16 @@
 import styled from "styled-components";
 
-export const PageTitle = ({ title, sub }: { title: string; sub: string }) => (
+export const PageTitle = ({
+  icon,
+  title,
+  sub,
+}: {
+  icon?: string;
+  title: string;
+  sub: string;
+}) => (
   <PageTitle_Container>
-    <img src="/static/image/icon/loudspeaker.png " />
+    {icon && <img src={`/static/image/icon/${icon}.png`} />}
     <div className="title">{title}</div>
     <div className="subtitle">{sub}</div>
   </PageTitle_Container>

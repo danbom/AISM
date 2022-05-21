@@ -9,7 +9,7 @@ const introduce: NextPage = () => {
   return (
     <Introduce_Container>
       {/* <PageTitle title={"Introduce"} sub={"AISM 소개"} /> */}
-      <Section>
+      <Section1>
         <Title>
           <div className="typeit">
             {/* <img src="/static/image/icon/person-running.png" /> */}
@@ -39,18 +39,19 @@ const introduce: NextPage = () => {
           </div>{" "}
           가 되고 싶다면
         </Title>
-        <Title>
-          최고의 교육 프로그램과 강사진을 갖춘
-          <br />
-          AISM과 함께라면 가능합니다.
-        </Title>
+        <Title>AISM 으로 시작하세요.</Title>
+        <SubTitle>
+          학회 기반 다수의 교육 경험 <br />
+          도수 치료 기법, 척추 교정술, 근막 이완 기법, 팝 필라테스, 마사지 강의
+          등 다양한 교육 프로그램
+        </SubTitle>
         {/* <SubTitle>
           <Button className="button" color="gradient" auto>
             <p>교육 프로그램 바로가기</p>
             <img src="/static/image/icon/high-voltage-white.png" />
           </Button>
         </SubTitle> */}
-      </Section>
+      </Section1>
       <Section>
         {/* <Title>AISM 교육 프로그램을 선택하는 이유</Title> */}
         <Collapse.Group accordion={false}>
@@ -136,8 +137,21 @@ const introduce: NextPage = () => {
 
 export default introduce;
 
+const Introduce_Container = styled.div`
+  /* padding: 3rem 5rem; */
+
+  @media screen and (max-width: 960px) {
+    padding: 3rem 0;
+  }
+`;
+
 const Section = styled.div`
-  padding: 8rem 0;
+  width: 100%auto;
+  height: 877px;
+  /* padding: 8rem 60px; */
+  /* @media screen and (max-width: 960px) {
+    padding: 8rem 2rem;
+  } */
 
   .collapse {
     display: flex;
@@ -163,11 +177,29 @@ const Section = styled.div`
   }
 `;
 
-const Introduce_Container = styled.div`
-  padding: 0 5rem;
+const Section1 = styled(Section)`
+  color: #f0f2fa;
+  padding: 17rem 200px;
 
   @media screen and (max-width: 960px) {
-    padding: 0;
+    padding: 8rem 2rem;
+  }
+
+  @media screen and (min-width: 961px) and (max-width: 1669px) {
+    padding: 17rem 100px;
+  }
+
+  .a {
+    color: #192266;
+  }
+
+  .i {
+    color: #c2343e;
+  }
+
+  .sm {
+    color: #212047;
+    margin-right: 0.5rem;
   }
 `;
 
@@ -175,14 +207,17 @@ const Title = styled.div`
   display: flex;
   align-items: baseline;
   font-family: "Nanum Square EB";
-  font-size: 1.9rem;
+  font-size: 2.5rem;
   letter-spacing: -1.6px;
+  line-height: 3.4rem;
+  color: #f0f2fa;
 
   @media screen and (max-width: 960px) {
     display: flex;
     justify-content: center;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     letter-spacing: -1.2px;
+    line-height: 2rem;
     text-align: center;
   }
 
@@ -192,11 +227,22 @@ const Title = styled.div`
   .typeit {
     font-size: 3.3rem;
     margin-right: 0.8rem;
+    color: #f0f2fa;
 
     @media screen and (max-width: 960px) {
       margin-right: 0.4rem;
       font-size: 2.2rem;
     }
+  }
+`;
+
+const SubTitle = styled.p`
+  font-family: "Nanum Square R";
+  font-size: 1.1rem;
+
+  @media screen and (max-width: 960px) {
+    font-size: 0.8rem;
+    text-align: center;
   }
 `;
 

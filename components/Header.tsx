@@ -32,8 +32,8 @@ const Header = () => {
     </Link>
   );
 
-  const Menu = (title: string) => (
-    <Link href={`/${title}`}>
+  const Menu = (title: string, href: string) => (
+    <Link href={`/${href}`}>
       <MenuBtn>
         <MenuText>{title}</MenuText>
       </MenuBtn>
@@ -110,17 +110,17 @@ const Header = () => {
                   "professional course",
                 ])
               )} */}
-              {Menu("introduce")}
-              {Menu("program")}
-              {Menu("instructor")}
-              {Menu("notice")}
-              {Menu("faq")}
+              {Menu("소개", "introduce")}
+              {Menu("교육 프로그램", "program")}
+              {Menu("강사진", "instructor")}
+              {Menu("공지사항", "notice")}
+              {Menu("자주 묻는 질문", "faq")}
             </Grid.Container>
           </Grid>
           <Grid xs />
         </Container>
       </BigGrid>
-      <SmallGrid justify="center">
+      <SmallGrid justify="center" istop={(scrollY == 0).toString()}>
         <Container display="flex">
           <Grid xs />
           <Grid xs={7} justify="center" alignItems="center">
@@ -172,11 +172,15 @@ const Header = () => {
 export default Header;
 
 const LogoImage = styled.div`
-  width: 6rem;
-  height: 2.5rem;
+  width: 5.5rem;
+  height: 2.58rem;
   background-image: url("/static/image/AISM_logo_nodesc.png");
   background-repeat: no-repeat;
   background-size: contain;
+
+  @media screen and (max-width: 960px) {
+    display: none;
+  }
 `;
 
 const StyledHeader = styled.div`
@@ -210,14 +214,14 @@ const BigGrid = styled(StyledGrid)<IsTopProps>`
   padding: 0 6rem;
   box-shadow: ${(props) =>
     props.istop == "true" ? "none" : "rgb(2 1 1 / 10%) 0px 5px 20px -5px"};
+  color: ${(props) => (props.istop == "true" ? "#ffffff" : "#F0F2FA")};
 
   @media screen and (max-width: 960px) {
     display: none;
   }
 `;
 
-const SmallGrid = styled(StyledGrid)`
-  background: hsla(0, 0%, 100%, 0.95);
+const SmallGrid = styled(StyledGrid)<IsTopProps>`
   @media screen and (min-width: 960px) {
     display: none;
   }

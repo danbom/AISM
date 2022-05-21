@@ -9,6 +9,7 @@ const notice: NextPage = () => {
   return (
     <div>
       <PageTitle
+        icon="loudspeaker"
         title={"공지사항"}
         sub={"사이트 및 교육 프로그램 관련 공지사항"}
       />
