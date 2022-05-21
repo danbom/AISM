@@ -16,10 +16,12 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <main>
         <NextUIProvider>
-          <Header />
-          <StyledContainer>
-            <Component {...pageProps} />
-          </StyledContainer>
+          <GradientBackground>
+            <Header />
+            <StyledContainer>
+              <Component {...pageProps} />
+            </StyledContainer>
+          </GradientBackground>
         </NextUIProvider>
       </main>
     </>
@@ -29,10 +31,22 @@ function MyApp({ Component, pageProps }: AppProps) {
 export default MyApp;
 
 const StyledContainer = styled(Container)`
+  position: relative;
   padding: 8rem 10rem;
   font-family: "Nanum Square B";
 
   @media screen and (max-width: 960px) {
     padding: 4rem 1rem;
   }
+`;
+
+const GradientBackground = styled.div`
+  /* z-index: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: fit-content;
+  background-size: cover;
+  background-image: url("/static/image/background/1.png");
+  background-repeat: no-repeat; */
 `;

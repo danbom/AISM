@@ -179,8 +179,12 @@ const StyledHeader = styled.div`
   z-index: 100;
 `;
 
-const StyledGrid = styled(Grid)`
-  background: hsla(0, 0%, 100%, 0.8);
+interface IsTopProps {
+  istop?: string;
+}
+
+const StyledGrid = styled(Grid)<IsTopProps>`
+  /* background: hsla(0, 0%, 100%, 0.8); */
   display: flex;
   align-items: center;
   width: 100%;
@@ -188,14 +192,11 @@ const StyledGrid = styled(Grid)`
   transition: 0.3s ease;
 
   @media screen and (min-width: 960px) {
-    backdrop-filter: saturate(180%) blur(10px);
+    backdrop-filter: ${(props) =>
+      props.istop == "true" ? "none" : "blur(15px)"};
     box-shadow: rgb(2 1 1 / 10%) 0px 5px 20px -5px;
   }
 `;
-
-interface IsTopProps {
-  istop?: string;
-}
 
 const BigGrid = styled(StyledGrid)<IsTopProps>`
   box-shadow: ${(props) =>
