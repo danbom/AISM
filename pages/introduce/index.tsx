@@ -144,36 +144,27 @@ const Section = styled.div`
     align-items: center;
     padding: 1rem 0;
 
+    @media screen and (max-width: 960px) {
+      padding: 0.5rem 0;
+    }
+
     img {
-      width: 4rem;
-      height: 4rem;
-      margin-right: 2rem;
     }
 
     p {
       font-family: "Nanum Square R";
       font-size: 1.1rem;
       margin-top: 0;
+
+      @media screen and (max-width: 960px) {
+        font-size: 1rem;
+      }
     }
   }
 `;
 
 const Introduce_Container = styled.div`
   padding: 0 5rem;
-
-  .introduce_description {
-    font-family: "Nanum Square R";
-    font-size: 1.1rem;
-
-    .highlight {
-      font-family: "Nanum Square EB";
-    }
-
-    img {
-      width: 1.5rem;
-      height: 1.5rem;
-    }
-  }
 
   @media screen and (max-width: 960px) {
     padding: 0;
@@ -187,56 +178,62 @@ const Title = styled.div`
   font-size: 1.9rem;
   letter-spacing: -1.6px;
 
+  @media screen and (max-width: 960px) {
+    display: flex;
+    justify-content: center;
+    font-size: 1.2rem;
+    letter-spacing: -1.2px;
+    text-align: center;
+  }
+
   img {
-    width: 8rem;
-    height: 8rem;
   }
 
   .typeit {
     font-size: 3.3rem;
     margin-right: 0.8rem;
-  }
-`;
 
-const SubTitle = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: baseline;
-  padding-top: 1.2rem;
-  color: #363636b2;
-  font-family: "Nanum Square R";
-  font-size: 1.1rem;
-  letter-spacing: -1.3px;
-
-  .button {
-    width: 14rem;
-    height: 3rem;
-    border-radius: 20px;
-
-    p {
-      font-family: "Nanum Square EB";
-      font-size: 1.1rem;
-      letter-spacing: -1px;
-      padding-right: 0.5rem;
+    @media screen and (max-width: 960px) {
+      margin-right: 0.4rem;
+      font-size: 2.2rem;
     }
   }
 `;
 
 const TimeLine = styled.div`
   padding-top: 1rem;
+
+  @media screen and (max-width: 960px) {
+    padding: 1.5rem;
+  }
+
   p {
     font-family: "Nanum Square B";
     font-size: 1.1rem;
     letter-spacing: -0.4px;
+
+    @media screen and (max-width: 960px) {
+      display: flex;
+      flex-direction: column;
+      font-size: 1rem;
+      letter-spacing: -0.4px;
+    }
   }
+
   .line {
     position: absolute;
   }
+
   .time {
     font-family: "Nanum Square R";
     font-size: 1rem;
     padding-right: 1rem;
+
+    @media screen and (max-width: 960px) {
+      font-size: 0.9rem;
+    }
   }
+
   .time::before {
     content: "○";
     padding-right: 0.6rem;
