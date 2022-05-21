@@ -28,7 +28,7 @@ const Header = () => {
 
   const Logo = (
     <Link href="/">
-      <MenuText>Logo</MenuText>
+      <LogoImage></LogoImage>
     </Link>
   );
 
@@ -171,6 +171,14 @@ const Header = () => {
 
 export default Header;
 
+const LogoImage = styled.div`
+  width: 6rem;
+  height: 2.5rem;
+  background-image: url("/static/image/AISM_logo_nodesc.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+`;
+
 const StyledHeader = styled.div`
   top: 0px;
   height: 84px;
@@ -199,6 +207,7 @@ const StyledGrid = styled(Grid)<IsTopProps>`
 `;
 
 const BigGrid = styled(StyledGrid)<IsTopProps>`
+  padding: 0 6rem;
   box-shadow: ${(props) =>
     props.istop == "true" ? "none" : "rgb(2 1 1 / 10%) 0px 5px 20px -5px"};
 
