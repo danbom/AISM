@@ -97,7 +97,7 @@ const Header = () => {
             {Logo}
             {/* <StyledImg src="/static/image/AISM_logo_nodesc.png" alt="Logo" /> */}
           </Grid>
-          <Grid xs={8} justify="center">
+          <Grid xs={10} justify="center">
             <Grid.Container gap={2} justify="center">
               {/* {MenuWithSub(
                 "introduce",
@@ -172,7 +172,7 @@ const Header = () => {
 export default Header;
 
 const LogoImage = styled.div`
-  width: 5.5rem;
+  /* width: 5.5rem;
   height: 2.58rem;
   background-image: url("/static/image/AISM_logo_nodesc.png");
   background-repeat: no-repeat;
@@ -180,13 +180,14 @@ const LogoImage = styled.div`
 
   @media screen and (max-width: 960px) {
     display: none;
-  }
+  } */
 `;
 
 const StyledHeader = styled.div`
   top: 0px;
+  width: 100%;
   height: 84px;
-  position: sticky;
+  position: absolute;
   background: transparent;
   z-index: 100;
 `;
@@ -214,7 +215,6 @@ const BigGrid = styled(StyledGrid)<IsTopProps>`
   padding: 0 6rem;
   box-shadow: ${(props) =>
     props.istop == "true" ? "none" : "rgb(2 1 1 / 10%) 0px 5px 20px -5px"};
-  color: ${(props) => (props.istop == "true" ? "#ffffff" : "#F0F2FA")};
 
   @media screen and (max-width: 960px) {
     display: none;
@@ -258,7 +258,7 @@ const MenuBtn = styled.button`
   }
 
   &:hover {
-    background-color: rgba(2, 32, 71, 0.05);
+    background-color: rgba(2, 32, 71, 0.1);
   }
 `;
 
@@ -288,6 +288,7 @@ const MenuText = styled.p`
   padding: 0;
   font-family: "Nanum Square EB";
   font-size: 1.1rem;
+  color: #f0f2fa;
 
   &::first-letter {
     text-transform: uppercase;
