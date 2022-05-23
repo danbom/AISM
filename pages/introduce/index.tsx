@@ -46,9 +46,24 @@ const introduce: NextPage = () => {
             물리 치료 기법, 팝 필라테스, 마사지 강의 등 다양한 교육 프로그램
           </SubTitle>
           <div className="lectures">
-            <img src="/static/image/lecture_1.png" />
-            <img src="/static/image/lecture_2.png" />
-            <img src="/static/image/lecture_3.png" />
+            <img
+              data-aos="fade-up"
+              data-aos-easing="linear"
+              data-aos-duration="500"
+              src="/static/image/lecture_1.png"
+            />
+            <img
+              data-aos="fade-up"
+              data-aos-easing="linear"
+              data-aos-duration="500"
+              src="/static/image/lecture_2.png"
+            />
+            <img
+              data-aos="fade-up"
+              data-aos-easing="linear"
+              data-aos-duration="500"
+              src="/static/image/lecture_3.png"
+            />
           </div>
           {/* <ButtonGroup>
             <Button className="button">
@@ -64,6 +79,9 @@ const introduce: NextPage = () => {
           <Title2>AISM을 선택하는 이유</Title2>
           <CardGroup>
             <Card
+              data-aos="fade-up"
+              data-aos-easing="linear"
+              data-aos-duration="500"
               style={{
                 background: "#6C6CE5",
                 boxShadow: "rgb(108 108 229 / 50%) 0px 5px 20px 0px",
@@ -78,6 +96,9 @@ const introduce: NextPage = () => {
               </div>
             </Card>
             <Card
+              data-aos="fade-up"
+              data-aos-easing="linear"
+              data-aos-duration="700"
               style={{
                 background: "#F9D74C",
                 color: "#353353",
@@ -92,6 +113,9 @@ const introduce: NextPage = () => {
               </div>
             </Card>
             <Card
+              data-aos="fade-up"
+              data-aos-easing="linear"
+              data-aos-duration="900"
               style={{
                 background: "#F97B8B",
                 boxShadow: "rgb(249 123 139 / 50%) 0px 5px 20px 0px",
