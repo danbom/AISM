@@ -29,6 +29,5 @@ function MyApp({ Component, pageProps }: AppProps) {
 export default MyApp;
 
 const StyledContainer = styled.div`
-  position: relative;
-  font-family: "Nanum Square B";
+  top: 0;
 `;

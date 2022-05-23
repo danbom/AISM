@@ -39,7 +39,7 @@
 }
 
 main {
-  /* background: #f0f2fa; */
+  background: #f9f9ff;
   position: relative;
 }
 
@@ -58,7 +58,6 @@ a {
 
 * {
   box-sizing: border-box;
-  color: #363636;
 }
 
 *::-webkit-scrollbar {

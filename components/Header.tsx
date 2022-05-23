@@ -184,10 +184,10 @@ const LogoImage = styled.div`
 `;
 
 const StyledHeader = styled.div`
-  top: 0px;
+  top: 0;
   width: 100%;
-  height: 84px;
-  position: absolute;
+  height: 65px;
+  position: fixed;
   background: transparent;
   z-index: 100;
 `;
@@ -197,12 +197,16 @@ interface IsTopProps {
 }
 
 const StyledGrid = styled(Grid)<IsTopProps>`
-  /* background: hsla(0, 0%, 100%, 0.8); */
+  background: hsla(0, 0%, 100%, 0.8);
   display: flex;
   align-items: center;
   width: 100%;
   height: 100%;
-  transition: 0.3s ease;
+  transition: 0.1s ease;
+
+  @media screen and (max-width: 960px) {
+    background: transparent;
+  }
 
   @media screen and (min-width: 960px) {
     backdrop-filter: ${(props) =>
@@ -286,9 +290,9 @@ const ExpendedMenuBtn = styled(MenuBtn)`
 const MenuText = styled.p`
   margin: 0;
   padding: 0;
-  font-family: "Nanum Square EB";
+  font-family: "Nanum Square B";
   font-size: 1.1rem;
-  color: #f0f2fa;
+  color: #353353;
 
   &::first-letter {
     text-transform: uppercase;
