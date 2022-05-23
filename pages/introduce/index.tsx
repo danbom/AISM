@@ -45,6 +45,11 @@ const introduce: NextPage = () => {
             학회 기반 다수의 교육 경험 <br />
             물리 치료 기법, 팝 필라테스, 마사지 강의 등 다양한 교육 프로그램
           </SubTitle>
+          <div className="lectures">
+            <img src="/static/image/lecture_1.png" />
+            <img src="/static/image/lecture_2.png" />
+            <img src="/static/image/lecture_3.png" />
+          </div>
           {/* <ButtonGroup>
             <Button className="button">
               교육 프로그램 바로가기
@@ -240,6 +245,26 @@ const Section1 = styled(Section)`
       font-size: 1rem;
       padding: 0.2rem 0.9rem;
       margin-bottom: 1.7rem;
+    }
+  }
+
+  .lectures {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+    padding: 0 1rem;
+
+    img {
+      width: 32%;
+      border-radius: 10px;
+      cursor: pointer;
+
+      & + & {
+        margin-right: 3rem;
+      }
+
+      &:hover {
+      }
     }
   }
   /* 
