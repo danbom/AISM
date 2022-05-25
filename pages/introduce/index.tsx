@@ -9,124 +9,114 @@ const introduce: NextPage = () => {
     <>
       <Introduce_Container>
         <Section1>
-          {/* <Illustration src="/static/image/illustration_1.svg" /> */}
-          <div className="onair">ON-AIR</div>
-          <Title>
-            <div className="typeit">
-              {/* <img src="/static/image/icon/person-running.png" /> */}
-              <TypeIt
-                options={{ loop: true }}
-                getBeforeInit={(instance) => {
-                  instance
-                    .type("물리치료사")
-                    .pause(1200)
-                    .delete()
-                    .pause(200)
-                    .type("헬스&nbsp;트레이너")
-                    .pause(1200)
-                    .delete()
-                    .pause(200)
-                    .type("요가&nbsp;강사")
-                    .pause(1200)
-                    .delete()
-                    .pause(200)
-                    .type("필라테스&nbsp;강사")
-                    .pause(1200);
+          <div style={{ width: "40%" }}>
+            <div className="onair">ON-AIR</div>
+            <Title>
+              아래와 같은 고민을 가지고 있다면
+              <br />
+              AISM으로 시작하세요!
+            </Title>
+            <Title>
+              <div className="typeit">
+                {/* <img src="/static/image/icon/person-running.png" /> */}
+                <TypeIt
+                  options={{ loop: true }}
+                  getBeforeInit={(instance) => {
+                    instance
+                      .type("최고의 체형 분석 전문가가 되고 싶어요.")
+                      .pause(1200)
+                      .delete()
+                      .pause(200)
+                      .type("Performance Specialist가 되고 싶어요.")
+                      .pause(1200);
 
-                  // Remember to return it!
-                  return instance;
-                }}
-              />
-            </div>{" "}
-            가 되고 싶다면
-          </Title>
-          <Title>AISM으로 시작하세요.</Title>
-          <SubTitle>
-            학회 기반 다수의 교육 경험 <br />
-            물리 치료 기법, 팝 필라테스, 마사지 강의 등 다양한 교육 프로그램
-          </SubTitle>
-          <div className="lectures">
-            <img
-              data-aos="fade-up"
-              data-aos-easing="linear"
-              data-aos-duration="500"
-              src="/static/image/lecture_1.png"
-            />
-            <img
-              data-aos="fade-up"
-              data-aos-easing="linear"
-              data-aos-duration="500"
-              src="/static/image/lecture_2.png"
-            />
-            <img
-              data-aos="fade-up"
-              data-aos-easing="linear"
-              data-aos-duration="500"
-              src="/static/image/lecture_3.png"
-            />
+                    // Remember to return it!
+                    return instance;
+                  }}
+                />
+              </div>
+            </Title>
+            <Tags>
+              <Tag># 물리 치료 기법</Tag>
+              <Tag># 팝 필라테스</Tag>
+              <Tag># 마사지</Tag>
+            </Tags>
           </div>
-          {/* <ButtonGroup>
-            <Button className="button">
-              교육 프로그램 바로가기
-            </Button>
-            <Button className="button">
-              강사진 소개 바로가기
-            </Button>
-          </ButtonGroup> */}
-          {/* <GradientImage src="/static/image/icon/group.svg" /> */}
+          <div style={{ width: "36%" }}>
+            <img className="lecture-image" src="/static/image/강의예시.png" />
+          </div>
         </Section1>
         <Section2>
-          <Title2>AISM을 선택하는 이유</Title2>
+          <Title2>수강생들이 AISM을 선택하는 이유는?</Title2>
           <CardGroup>
             <Card
               data-aos="fade-up"
               data-aos-easing="linear"
-              data-aos-duration="500"
+              data-aos-duration="200"
               style={{
-                background: "#6C6CE5",
-                boxShadow: "rgb(108 108 229 / 50%) 0px 5px 20px 0px",
+                background: "#264653",
+                boxShadow: "rgb(38 70 83 / 50%) 0px 5px 20px 0px",
               }}
             >
+              <div className="title">
+                특허 받은
+                <br />
+                해부학 교구 수업
+              </div>
               <img src="/static/image/icon/3845897.png" />
-              <div className="title">선진 교육 프로그램</div>
-              <div className="desc">
-                AISM은 미국의 물리치료사 및 헬스 트레이너들과 교류하며 선진 교육
-                프로그램 개발에 힘쓰고 있습니다. 특히 이번 체형 분석 전문가
-                과정은 한국은 물론 미국의 유능한 강사진들로 구성되어 있습니다.
-              </div>
             </Card>
             <Card
               data-aos="fade-up"
               data-aos-easing="linear"
-              data-aos-duration="700"
+              data-aos-duration="200"
               style={{
-                background: "#F9D74C",
+                background: "#2a9d8f",
+                boxShadow: "rgb(42 157 143 / 50%) 0px 5px 20px 0px",
+              }}
+            >
+              <div className="title">
+                미국 체형 분석
+                <br /> 전문가들과 함께하는 강의
+              </div>
+              <img src="/static/image/icon/3845897.png" />
+            </Card>
+            <Card
+              data-aos="fade-up"
+              data-aos-easing="linear"
+              data-aos-duration="200"
+              style={{
+                background: "#e9c46a",
                 color: "#353353",
-                boxShadow: "rgb(249 215 76 / 50%) 0px 5px 20px 0px",
+                boxShadow: "rgb(233 196 106 / 50%) 0px 5px 20px 0px",
               }}
             >
-              <img src="/static/image/icon/3845752.png" />
-              <div className="title">다양한 프로그램</div>
-              <div className="desc">
-                도수 치료 기법은 물론 환자를 관리하는데 필요한 척추 교정술, 근막
-                이완 기법, 팝 필라테스, 마사지 강의를 실시하고 있습니다.
-              </div>
+              <div className="title">선진 교육 프로그램</div>
+              <img src="/static/image/icon/3845897.png" />
             </Card>
             <Card
               data-aos="fade-up"
               data-aos-easing="linear"
-              data-aos-duration="900"
+              data-aos-duration="300"
               style={{
-                background: "#F97B8B",
-                boxShadow: "rgb(249 123 139 / 50%) 0px 5px 20px 0px",
+                background: "#f4a261",
+                color: "#353353",
+                boxShadow: "rgb(244 162 97 / 50%) 0px 5px 20px 0px",
               }}
             >
-              <img src="/static/image/icon/3845878.png" />
+              <div className="title">다양한 프로그램</div>
+              <img src="/static/image/icon/3845752.png" />
+            </Card>
+            <Card
+              data-aos="fade-up"
+              data-aos-easing="linear"
+              data-aos-duration="400"
+              style={{
+                background: "#e76f51",
+                boxShadow: "rgb(231 111 81 / 50%) 0px 5px 20px 0px",
+              }}
+            >
               <div className="title">온오프라인 교육</div>
-              <div className="desc">
-                2018년 이전까지는 오프라인 교육으로 진행하였으나 코로나 팬데믹
-                이후 온, 오프라인 병행 교육을 실시하고 있습니다.
-              </div>
+              <img src="/static/image/icon/3845878.png" />
             </Card>
           </CardGroup>
         </Section2>
@@ -236,18 +226,18 @@ const Introduce_Container = styled.div`
 `;
 
 const Section = styled.div`
-  width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
 `;
 
 const Section1 = styled(Section)`
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
   color: #f0f2fa;
-  padding: 22rem 18rem;
+  margin: 0 auto;
   background-color: #353353;
-  height: 1000px;
+  height: 500px;
 
   @media screen and (max-width: 960px) {
     padding: 8rem 2rem;
@@ -255,14 +245,15 @@ const Section1 = styled(Section)`
   }
 
   .onair {
-    font-family: "Nanum Square EB";
-    font-size: 1.3rem;
+    width: fit-content;
+    font-family: "Nanum Square B";
+    font-size: 1rem;
     letter-spacing: -1.6px;
     background: #ff2942;
-    padding: 0.3rem 1rem;
+    padding: 0.2rem 0.8rem;
     border-radius: 10px;
     color: #f0f2fa;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     box-shadow: 0 0 20px 3px rgb(255 76 96 / 30%);
 
     @media screen and (max-width: 960px) {
@@ -272,43 +263,14 @@ const Section1 = styled(Section)`
     }
   }
 
-  .lectures {
-    display: flex;
-    justify-content: space-between;
-    margin: 1rem 0;
-    padding: 0 1rem;
-
-    img {
-      width: 32%;
-      border-radius: 10px;
-      cursor: pointer;
-
-      & + & {
-        margin-right: 3rem;
-      }
-
-      &:hover {
-      }
-    }
-  }
-  /* 
-  @media screen and (min-width: 961px) and (max-width: 1669px) {
-    padding: 22rem 3rem;
-  } */
-`;
-
-const Illustration = styled.img`
-  position: absolute;
-  top: 16rem;
-  right: 5%;
-  width: 45rem;
-
-  @media screen and (max-width: 960px) {
+  .lecture-image {
+    border-radius: 10px;
     display: none;
   }
 
-  /* @media screen and (min-width: 961px) and (max-width: 1669px) {
-    right: 10%;
+  /* 
+  @media screen and (min-width: 961px) and (max-width: 1669px) {
+    padding: 22rem 3rem;
   } */
 `;
 
@@ -316,12 +278,12 @@ const Title = styled.div`
   position: relative;
   display: flex;
   align-items: baseline;
-  font-family: "Nanum Square EB";
-  font-size: 2.6rem;
+  font-family: "Nanum Square B";
+  font-size: 1.9rem;
   letter-spacing: -1.6px;
-  line-height: 3.8rem;
   color: #f0f2fa;
   z-index: 2;
+  margin-bottom: 0.6rem;
 
   @media screen and (max-width: 960px) {
     display: flex;
@@ -336,9 +298,14 @@ const Title = styled.div`
   }
 
   .typeit {
-    font-size: 3.8rem;
+    width: 30rem;
+    border: 2px solid #f0f2fa;
+    border-radius: 5px;
+    padding: 0.4rem 0.8rem;
+    font-size: 1.3rem;
     margin-right: 0.8rem;
-    color: #f0f2fa;
+    margin-bottom: 0.6rem;
+    color: #f0f2face;
 
     @media screen and (max-width: 960px) {
       margin-right: 0.4rem;
@@ -347,18 +314,25 @@ const Title = styled.div`
   }
 `;
 
-const SubTitle = styled.p`
-  font-family: "Nanum Square R";
-  font-size: 1.1rem;
-  line-height: 1.6rem;
-  margin-bottom: 3rem;
+const Tags = styled.div`
+  display: flex;
+  @media screen and (max-width: 960px) {
+  }
+`;
+
+const Tag = styled.div`
+  padding: 0.5rem 0.7rem;
+  font-size: 0.8rem;
+  border-radius: 15px;
+  background: #f0f2fa1a;
+  font-family: "Nanum Square B";
   text-align: center;
 
+  & + & {
+    margin-left: 0.6rem;
+  }
+
   @media screen and (max-width: 960px) {
-    font-size: 0.8rem;
-    line-height: 1.3rem;
-    margin-bottom: 2rem;
-    padding: 0 2rem;
   }
 `;
 
@@ -421,18 +395,9 @@ const Button = styled.div`
   }
 `;
 
-const GradientImage = styled.img`
-  width: 17rem;
-  margin-left: 4rem;
-
-  @media screen and (min-width: 576px) {
-    display: none;
-  }
-`;
-
 const Section2 = styled(Section)`
-  padding: 0 15%;
-  height: 900px;
+  margin: 0 12rem;
+  height: 400px;
   flex-direction: column;
 
   @media screen and (max-width: 960px) {
@@ -444,9 +409,11 @@ const Section2 = styled(Section)`
     padding: 0 200px;
   } */
 `;
+
 const Title2 = styled(Title)`
   color: #353353;
-  margin-bottom: 4rem;
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
 
   @media screen and (max-width: 960px) {
     font-size: 1.7rem;
@@ -466,11 +433,10 @@ const CardGroup = styled.div`
 `;
 
 const Card = styled.div`
-  width: 32%;
+  width: 19%;
+  height: 12rem;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem 2rem;
+  padding: 1.5rem;
   border-radius: 15px;
   color: #f7f9fc;
   box-shadow: rgb(108 108 229 / 50%) 0px 5px 20px 0px;
@@ -482,9 +448,11 @@ const Card = styled.div`
   }
 
   img {
-    width: 6rem;
-    height: 6rem;
-    margin-bottom: 1rem;
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 5rem;
+    height: 5rem;
 
     @media screen and (max-width: 960px) {
       width: 3rem;
@@ -494,9 +462,8 @@ const Card = styled.div`
   }
 
   .title {
-    font-family: "Nanum Square EB";
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+    font-family: "Nanum Square B";
+    font-size: 1.3rem;
 
     @media screen and (max-width: 960px) {
       font-size: 1.2rem;

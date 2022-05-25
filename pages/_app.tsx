@@ -36,5 +36,5 @@ function MyApp({ Component, pageProps }: AppProps) {
 export default MyApp;
 
 const StyledContainer = styled.div`
-  top: 0;
+  margin-top: 65px;
 `;
