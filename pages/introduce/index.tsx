@@ -9,7 +9,7 @@ const introduce: NextPage = () => {
     <>
       <Introduce_Container>
         <Section1>
-          <div style={{ width: "40%" }}>
+          <div>
             <div className="onair">ON-AIR</div>
             <Title>
               아래와 같은 고민을 가지고 있다면
@@ -42,9 +42,6 @@ const introduce: NextPage = () => {
               <Tag># 마사지</Tag>
             </Tags>
           </div>
-          <div style={{ width: "36%" }}>
-            <img className="lecture-image" src="/static/image/강의예시.png" />
-          </div>
         </Section1>
         <Section2>
           <Title2>수강생들이 AISM을 선택하는 이유는?</Title2>
@@ -63,7 +60,7 @@ const introduce: NextPage = () => {
                 <br />
                 해부학 교구 수업
               </div>
-              <img src="/static/image/icon/3845897.png" />
+              <img src="/static/image/icon/star.png" />
             </Card>
             <Card
               data-aos="fade-up"
@@ -78,7 +75,7 @@ const introduce: NextPage = () => {
                 미국 체형 분석
                 <br /> 전문가들과 함께하는 강의
               </div>
-              <img src="/static/image/icon/3845897.png" />
+              <img src="/static/image/icon/body.png" />
             </Card>
             <Card
               data-aos="fade-up"
@@ -123,7 +120,7 @@ const introduce: NextPage = () => {
         <Section3>
           {/* <img src="/static/image/icon/Illustration .svg" /> */}
           <Column>
-            <Title3>AISM 연혁</Title3>
+            <Title3>AISM은 어떤 길을 걸어왔을까요?</Title3>
             <TimeLine>
               <div className="line" />
               <div className="row">
@@ -228,10 +225,12 @@ const Introduce_Container = styled.div`
 const Section = styled.div`
   display: flex;
   justify-content: center;
+  padding: 0 15rem;
   /* align-items: center; */
 `;
 
 const Section1 = styled(Section)`
+  justify-content: flex-start;
   flex-direction: row;
   align-items: center;
   color: #f0f2fa;
@@ -396,7 +395,6 @@ const Button = styled.div`
 `;
 
 const Section2 = styled(Section)`
-  margin: 0 12rem;
   height: 400px;
   flex-direction: column;
 
@@ -449,10 +447,10 @@ const Card = styled.div`
 
   img {
     position: absolute;
-    bottom: 1.5rem;
-    right: 1.5rem;
-    width: 5rem;
-    height: 5rem;
+    bottom: 0.7rem;
+    right: 0.7rem;
+    width: 5.2rem;
+    height: 5.2rem;
 
     @media screen and (max-width: 960px) {
       width: 3rem;
@@ -463,7 +461,7 @@ const Card = styled.div`
 
   .title {
     font-family: "Nanum Square B";
-    font-size: 1.3rem;
+    font-size: 1.2rem;
 
     @media screen and (max-width: 960px) {
       font-size: 1.2rem;
@@ -493,8 +491,9 @@ const Card = styled.div`
 `;
 
 const Section3 = styled(Section)`
-  height: 1000px;
-  /* padding: 15rem 12rem; */
+  height: 800px;
+  justify-content: flex-start;
+  background: #fff; /* padding: 15rem 12rem; */
 
   img {
     @media screen and (max-width: 960px) {
@@ -513,19 +512,20 @@ const Section3 = styled(Section)`
   }
 `;
 
-const Title3 = styled(Title)`
-  color: #353353;
+const Title3 = styled(Title2)`
+  /* color: #353353;
   margin-bottom: 4rem;
 
   @media screen and (max-width: 960px) {
     font-size: 1.7rem;
     margin-bottom: 2rem;
-  }
+  } */
 `;
 
 const Column = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
 
   .title {
     font-family: "Nanum Square EB";
