@@ -1,101 +1,63 @@
+import { useState } from "react";
 import styled from "styled-components";
+
+import history from "../../data/history.json";
 
 import Section from "../Section";
 import Title from "../Title";
 
 const Section3 = () => {
+  const [year, setYear] = useState("2022");
+  const [clicked, setClicked] = useState([
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+  ]);
+
+  const handleClicked = (index: number) => {
+    if (index === 0) setClicked([true, false, false, false, false, false]);
+    else if (index === 1) setClicked([false, true, false, false, false, false]);
+    else if (index === 2) setClicked([false, false, true, false, false, false]);
+    else if (index === 3) setClicked([false, false, false, true, false, false]);
+    else if (index === 4) setClicked([false, false, false, false, true, false]);
+    else setClicked([false, false, false, false, false, true]);
+  };
+
   return (
     <S3>
-      <Column>
-        <Title>AISM은 어떤 길을 걸어왔을까요?</Title>
-        <TimeLine>
-          <div className="line" />
-          <div className="row">
-            <div className="year">2013</div>
-            <div>
-              <div className="row">
-                <p className="month">09</p>
-                <p className="event">AMTI 학회 설립</p>
-              </div>
-              <div className="row">
-                <p className="month">11</p>
-                <p className="event">
-                  Assessment and Treatment of the Shoulder Complex 교육
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="row">
-            <div className="year">2014</div>
-            <div>
-              <div className="row">
-                <p className="month">11</p>
-                <p className="event">
-                  Spine Assessment & Joint Mobilization Techniques :
-                  Chiropractic approach 교육
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="row">
-            <div className="year">2016</div>
-            <div>
-              <div className="row">
-                <p className="month">11</p>
-                <p className="event">
-                  Advanced Integrity Sports & Medicine(AISM)으로 학회 명칭 변경
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="row">
-            <div className="year">2017</div>
-            <div>
-              <div className="row">
-                <p className="month">04</p>
-                <p className="event">
-                  The Science & Demonstration of Myofascial Release Therapy
-                  건양대학교 교육 및 서울 교육
-                </p>
-              </div>
-              <div className="row">
-                <p className="month">05</p>
-                <p className="event">POP Pilates 교육</p>
-              </div>
-              <div className="row">
-                <p className="month">06</p>
-                <p className="event">Chiro Practic 교육</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="row">
-            <div className="year">2018</div>
-            <div>
-              <div className="row">
-                <p className="month">05</p>
-                <p className="event">
-                  The Science & Demonstration of Myofascial Release Therapy
-                  가톨릭관동대학교 교육
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="row">
-            <div className="year">2022</div>
-            <div>
-              <div className="row">
-                <p className="month">09</p>
-                <p className="event">Performance Specialist 교육 예정</p>
-              </div>
-            </div>
-          </div>
-        </TimeLine>
-      </Column>
+      <Title>AISM 연혁</Title>
+      <div className="years">
+        {["2022", "2018", "2017", "2016", "2014", "2013"].map((year, index) => {
+          return (
+            <Year
+              key={year}
+              onClick={(e) => {
+                e.preventDefault();
+                setYear(year);
+                handleClicked(index);
+              }}
+              clicked={clicked[index] === true}
+            >
+              {year}
+            </Year>
+          );
+        })}
+      </div>
+      <div className="box">
+        {history.map(
+          (h, index) =>
+            h.date.slice(0, 4) === year && (
+              <Element key={index}>
+                <div className="circle" />
+                <div className="date">{h.date}</div>
+                <div className="content">{h.content}</div>
+              </Element>
+            )
+        )}
+      </div>
     </S3>
   );
 };
@@ -103,9 +65,20 @@ const Section3 = () => {
 export default Section3;
 
 const S3 = styled(Section)`
-  height: 800px;
-  justify-content: flex-start;
-  background: #fff;
+  flex-direction: column;
+  height: 350px;
+
+  .years {
+    display: flex;
+    flex-direction: row;
+    font-family: "Nanum Square B";
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+
+  .box {
+    color: #2f3438;
+  }
 
   img {
     @media screen and (max-width: 960px) {
@@ -124,77 +97,49 @@ const S3 = styled(Section)`
   }
 `;
 
-const Column = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+interface yearProps {
+  clicked?: boolean;
+}
 
-  .title {
-    font-family: "Nanum Square EB";
-    font-size: 2.4rem;
-    letter-spacing: -1.6px;
+const Year = styled.div<yearProps>`
+  background-color: ${(props) => (props.clicked ? " #f1f3f5" : "#f1f3f557")};
+  color: #2f3438;
+  padding: 0.4rem 1rem;
+  border-radius: 10px;
+  letter-spacing: -1px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  & + & {
+    margin-left: 0.7rem;
+  }
+
+  &:hover {
+    background-color: #f1f3f5;
   }
 `;
 
-const TimeLine = styled.div`
-  color: #353353;
+const Element = styled.div`
   display: flex;
-  flex-direction: column;
+  align-items: center;
 
-  @media screen and (max-width: 960px) {
-    padding: 1.5rem;
+  & + & {
+    margin-top: 1rem;
   }
 
-  p {
-    font-family: "Nanum Square B";
-    font-size: 1.1rem;
-    letter-spacing: -0.4px;
-    margin: 0;
-
-    @media screen and (max-width: 960px) {
-      display: flex;
-      flex-direction: column;
-      font-size: 1rem;
-    }
+  .date {
+    font-family: "Nanum Square R";
+    letter-spacing: -1px;
+    margin-right: 1.5rem;
   }
-
-  .row {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-
-    & + & {
-      margin-top: 1rem;
-    }
-
-    @media screen and (max-width: 960px) {
-      flex-direction: column;
-    }
+  .circle {
+    width: 0.5rem;
+    height: 0.5rem;
+    border: 2px solid #3183ff;
+    border-radius: 50%;
+    margin-right: 1rem;
   }
-
-  .year {
-    font-family: "Nanum Square EB";
-    font-size: 2rem;
-    color: #35335321;
-    letter-spacing: -2px;
-    margin: 1.5rem 5rem 1.5rem 0;
-
-    @media screen and (max-width: 960px) {
-      margin: 1.5rem 0 1.5rem 0;
-    }
-  }
-
-  .month {
-    letter-spacing: -2px;
-    margin: 0rem 2rem 0rem 0;
-    color: #353353b5;
-    @media screen and (max-width: 960px) {
-    }
-  }
-
-  .event {
-    font-family: "Nanum Square B";
-    @media screen and (max-width: 960px) {
-    }
+  .content {
+    /* font-family: "Nanum Square R"; */
   }
 `;

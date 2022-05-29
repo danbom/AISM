@@ -32,7 +32,7 @@ const PageTitle_Container = styled.div`
   .title {
     display: flex;
     align-items: center;
-    font-size: 3rem;
+    font-size: 1.5rem;
     font-family: "Nanum Square EB";
 
     @media screen and (max-width: 960px) {

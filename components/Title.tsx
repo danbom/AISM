@@ -10,9 +10,9 @@ const T = styled.div`
   align-items: baseline;
   font-family: "Nanum Square EB";
   letter-spacing: -1.6px;
-  color: #fff;
-  font-size: 1.8rem;
-  margin-bottom: 5rem;
+  color: #2f3438;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
 
   @media screen and (max-width: 960px) {
     font-size: 1.7rem;
