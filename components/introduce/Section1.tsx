@@ -19,7 +19,7 @@ const Section1 = () => {
         data-aos="fade-up"
         data-aos-easing="linear"
         data-aos-duration="500"
-        data-aos-delay="200"
+        data-aos-delay="150"
         className="typeit"
       >
         <TypeIt
@@ -40,7 +40,7 @@ const Section1 = () => {
         data-aos="fade-up"
         data-aos-easing="linear"
         data-aos-duration="500"
-        data-aos-delay="300"
+        data-aos-delay="200"
         className="tags"
       >
         <Tag className="tag"># 물리 치료 기법</Tag>
@@ -57,24 +57,8 @@ const S1 = styled(Section)`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  background-color: #fff;
 
   @media screen and (max-width: 960px) {
-  }
-
-  .onair {
-    font-family: "Nanum Square B";
-    letter-spacing: -1.5px;
-    background: #ff364e;
-    border-bottom: 4px solid #df2b40;
-    padding: 0.2rem 0.8rem;
-    border-radius: 10px;
-    color: #fff;
-    margin-bottom: 1rem;
-    /* box-shadow: 0 0 15px 3px rgb(255 76 96 / 40%); */
-
-    @media screen and (max-width: 960px) {
-    }
   }
 
   .title {
@@ -82,12 +66,12 @@ const S1 = styled(Section)`
     font-size: 1.5rem;
     line-height: 2.8rem;
     letter-spacing: -1.6px;
-    color: #2f3438;
     margin-bottom: 1rem;
   }
 
   .typeit {
     font-family: "Nanum Square B";
+    color: #2f3438ac;
     width: 30rem;
     border: 2px solid #696c6e;
     border-radius: 5px;
@@ -95,7 +79,6 @@ const S1 = styled(Section)`
     font-size: 1.2rem;
     letter-spacing: -1.6px;
     margin: 0 0 1.2rem 0;
-    color: #2f3438ac;
 
     @media screen and (max-width: 960px) {
     }

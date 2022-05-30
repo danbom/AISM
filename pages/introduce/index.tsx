@@ -5,7 +5,6 @@ import Section1 from "../../components/introduce/Section1";
 import Section2 from "../../components/introduce/Section2";
 import Section3 from "../../components/introduce/Section3";
 import Section4 from "../../components/introduce/Section4";
-import Goto from "../../components/Goto";
 
 const introduce: NextPage = () => {
   return (

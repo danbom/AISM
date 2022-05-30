@@ -1,15 +1,15 @@
+import React, { useEffect } from "react";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { NextUIProvider } from "@nextui-org/react";
 import styled from "styled-components";
-import React, { useEffect } from "react";
 import AOS from "aos";
-import "aos/dist/aos.css";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 import "../styles/globals.css";
+import "aos/dist/aos.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {

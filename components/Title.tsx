@@ -10,7 +10,6 @@ const T = styled.div`
   align-items: baseline;
   font-family: "Nanum Square EB";
   letter-spacing: -1.6px;
-  color: #2f3438;
   font-size: 1.5rem;
   margin-bottom: 2rem;
 

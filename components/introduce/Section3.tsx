@@ -7,49 +7,43 @@ import Section from "../Section";
 import Title from "../Title";
 
 const Section3 = () => {
-  const [year, setYear] = useState("2022");
-  const [clicked, setClicked] = useState([
-    true,
-    false,
-    false,
-    false,
-    false,
-    false,
-  ]);
-
-  const handleClicked = (index: number) => {
-    if (index === 0) setClicked([true, false, false, false, false, false]);
-    else if (index === 1) setClicked([false, true, false, false, false, false]);
-    else if (index === 2) setClicked([false, false, true, false, false, false]);
-    else if (index === 3) setClicked([false, false, false, true, false, false]);
-    else if (index === 4) setClicked([false, false, false, false, true, false]);
-    else setClicked([false, false, false, false, false, true]);
-  };
+  const [clickedYear, setClickedYear] = useState("2022");
 
   return (
     <S3>
-      <Title>AISM 연혁</Title>
-      <div className="years">
+      <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500">
+        <Title>AISM 연혁</Title>
+      </div>
+      <div
+        className="years"
+        data-aos="fade-up"
+        data-aos-easing="linear"
+        data-aos-duration="500"
+      >
         {["2022", "2018", "2017", "2016", "2014", "2013"].map((year, index) => {
           return (
             <Year
               key={year}
               onClick={(e) => {
                 e.preventDefault();
-                setYear(year);
-                handleClicked(index);
+                setClickedYear(year);
               }}
-              clicked={clicked[index] === true}
+              clicked={clickedYear === year}
             >
               {year}
             </Year>
           );
         })}
       </div>
-      <div className="box">
+      <div
+        className="box"
+        data-aos="fade-up"
+        data-aos-easing="linear"
+        data-aos-duration="500"
+      >
         {history.map(
           (h, index) =>
-            h.date.slice(0, 4) === year && (
+            h.date.slice(0, 4) === clickedYear && (
               <Element key={index}>
                 <div className="circle" />
                 <div className="date">{h.date}</div>
@@ -75,26 +69,6 @@ const S3 = styled(Section)`
     font-size: 1.1rem;
     margin-bottom: 2rem;
   }
-
-  .box {
-    color: #2f3438;
-  }
-
-  img {
-    @media screen and (max-width: 960px) {
-      position: absolute;
-      width: 12rem;
-    }
-  }
-
-  @media screen and (max-width: 960px) {
-    padding: 8rem 2rem;
-    height: 1800px;
-  }
-
-  @media screen and (min-width: 961px) and (max-width: 1669px) {
-    /* padding: 22rem 200px; */
-  }
 `;
 
 interface yearProps {
@@ -103,7 +77,6 @@ interface yearProps {
 
 const Year = styled.div<yearProps>`
   background-color: ${(props) => (props.clicked ? " #f1f3f5" : "#f1f3f557")};
-  color: #2f3438;
   padding: 0.4rem 1rem;
   border-radius: 10px;
   letter-spacing: -1px;
@@ -140,6 +113,6 @@ const Element = styled.div`
     margin-right: 1rem;
   }
   .content {
-    /* font-family: "Nanum Square R"; */
+    font-size: 0.9rem;
   }
 `;
