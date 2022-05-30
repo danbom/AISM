@@ -1,15 +1,6 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Grid, Container } from "@nextui-org/react";
-// import {
-//   Category,
-//   Work,
-//   People,
-//   Paper,
-//   InfoSquare,
-//   Message,
-//   CloseSquare,
-// } from "react-iconly";
 import styled from "styled-components";
 
 const Header = () => {
@@ -40,45 +31,15 @@ const Header = () => {
     </Link>
   );
 
-  // const MenuWithSub = (title: string, subMenu: JSX.Element) => (
-  //   <Tooltip
-  //     content={subMenu}
-  //     placement="bottom"
-  //     trigger="hover"
-  //     hideArrow
-  //     css={{
-  //       zIndex: 9999,
-  //     }}
-  //   >
-  //     <Link href={`/${title}`}>
-  //       <MenuBtn>
-  //         <MenuText>{title}</MenuText>
-  //       </MenuBtn>
-  //     </Link>
-  //   </Tooltip>
-  // );
-
-  // const SubMenu = (menu: string, arr: Array<string>) => (
-  //   <div>
-  //     {arr.map((title, index) => (
-  //       <Link key={index} href={`/${menu}/${title}`}>
-  //         <MenuBtn>
-  //           <SubMenuText>{title}</SubMenuText>
-  //         </MenuBtn>
-  //       </Link>
-  //     ))}
-  //   </div>
-  // );
-
   const ExpendedMenu = (/*(icon: JSX.Element, */ title: string) => (
-    <Grid>
+    <div>
       <Link href={`/${title}`}>
         <ExpendedMenuBtn onClick={toggleExpended}>
           {/* {icon} */}
           <MenuText>{title}</MenuText>
         </ExpendedMenuBtn>
       </Link>
-    </Grid>
+    </div>
   );
 
   const toggleExpended = () => {
@@ -91,7 +52,7 @@ const Header = () => {
 
   return (
     <StyledHeader>
-      <BigGrid justify="center" istop={(scrollY == 0).toString()}>
+      <BigGrid istop={(scrollY == 0).toString()}>
         <Container display="flex">
           <Grid xs alignItems="center">
             {Logo}
@@ -99,17 +60,6 @@ const Header = () => {
           </Grid>
           <Grid xs={10} justify="center">
             <Grid.Container gap={2} justify="center">
-              {/* {MenuWithSub(
-                "introduce",
-                SubMenu("introduce", ["history", "goal", "props"])
-              )}
-              {MenuWithSub(
-                "program",
-                SubMenu("program", [
-                  "performance specialist",
-                  "professional course",
-                ])
-              )} */}
               {Menu("소개", "introduce")}
               {Menu("교육 프로그램", "program")}
               {Menu("강사진", "instructor")}
@@ -120,7 +70,7 @@ const Header = () => {
           <Grid xs />
         </Container>
       </BigGrid>
-      <SmallGrid justify="center" istop={(scrollY == 0).toString()}>
+      <SmallGrid istop={(scrollY == 0).toString()}>
         <Container display="flex">
           <Grid xs />
           <Grid xs={7} justify="center" alignItems="center">
@@ -171,17 +121,7 @@ const Header = () => {
 
 export default Header;
 
-const LogoImage = styled.div`
-  /* width: 5.5rem;
-  height: 2.58rem;
-  background-image: url("/static/image/AISM_logo_nodesc.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-
-  @media screen and (max-width: 960px) {
-    display: none;
-  } */
-`;
+const LogoImage = styled.div``;
 
 const StyledHeader = styled.div`
   top: 0;
@@ -196,7 +136,7 @@ interface IsTopProps {
   istop?: string;
 }
 
-const StyledGrid = styled(Grid)<IsTopProps>`
+const StyledGrid = styled.div<IsTopProps>`
   background: hsla(0, 0%, 100%, 0.8);
   display: flex;
   align-items: center;
@@ -278,10 +218,6 @@ const ExpendedMenuBtn = styled(MenuBtn)`
   border: none;
   cursor: pointer;
 
-  &::first-letter {
-    text-transform: uppercase;
-  }
-
   &:hover {
     background-color: rgba(2, 32, 71, 0.05);
   }
@@ -291,15 +227,5 @@ const MenuText = styled.p`
   margin: 0;
   padding: 0;
   font-family: "Nanum Square B";
-  font-size: 1.1rem;
-  color: #353353;
-
-  &::first-letter {
-    text-transform: uppercase;
-  }
+  font-size: 1rem;
 `;
-
-// const SubMenuText = styled(MenuText)`
-//   font-family: "Nanum Square B";
-//   font-size: 0.9rem;
-// `;
