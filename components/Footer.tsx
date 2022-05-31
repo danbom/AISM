@@ -36,12 +36,26 @@ const FooterContainer = styled(Section)`
   height: 150px;
   justify-content: center;
 
+  @media screen and (max-width: 479px) {
+    font-size: 0.6rem;
+  }
+
   .links {
     font-size: 0.9rem;
     margin-bottom: 0.7rem;
 
+    @media screen and (max-width: 479px) {
+      width: 80%;
+      font-size: 0.7rem;
+      margin-bottom: 0.5rem;
+    }
+
     a {
       margin-right: 1rem;
+
+      @media screen and (max-width: 479px) {
+        margin-right: 0.8rem;
+      }
     }
   }
 `;
