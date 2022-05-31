@@ -58,15 +58,17 @@ const S1 = styled(Section)`
   justify-content: center;
   align-items: flex-start;
 
-  @media screen and (max-width: 960px) {
-  }
-
   .title {
     font-family: "Nanum Square EB";
     font-size: 1.5rem;
     line-height: 2.8rem;
     letter-spacing: -1.6px;
     margin-bottom: 1rem;
+
+    @media screen and (max-width: 479px) {
+      font-size: 1.3rem;
+      line-height: 1.6rem;
+    }
   }
 
   .typeit {
@@ -80,7 +82,11 @@ const S1 = styled(Section)`
     letter-spacing: -1.6px;
     margin: 0 0 1.2rem 0;
 
-    @media screen and (max-width: 960px) {
+    @media screen and (max-width: 479px) {
+      width: 100%;
+      padding: 0.3rem 0.5rem;
+      font-size: 1rem;
+      margin: 0 0 1rem 0;
     }
   }
 
@@ -92,11 +98,20 @@ const S1 = styled(Section)`
 const Tag = styled.div`
   background-color: #f1f3f5;
   border-radius: 20px;
-  padding: 0.4rem 0.8rem 0.3rem 0.8rem;
+  padding: 0.4rem 0.8rem;
   font-size: 0.8rem;
   font-family: "Nanum Square R";
 
+  @media screen and (max-width: 479px) {
+    font-size: 0.6rem;
+    padding: 0.3rem 0.7rem;
+  }
+
   & + & {
     margin-left: 0.4rem;
+
+    @media screen and (max-width: 479px) {
+      margin-left: 0.3rem;
+    }
   }
 `;

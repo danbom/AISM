@@ -13,8 +13,10 @@ const T = styled.div`
   font-size: 1.5rem;
   margin-bottom: 2rem;
 
-  @media screen and (max-width: 960px) {
-    font-size: 1.7rem;
-    margin-bottom: 3rem;
+  @media screen and (max-width: 479px) {
+    font-size: 1.3rem;
+    line-height: 1.6rem;
+    width: 80%;
+    word-break: keep-all;
   }
 `;

@@ -68,6 +68,13 @@ const S3 = styled(Section)`
     font-family: "Nanum Square B";
     font-size: 1.1rem;
     margin-bottom: 2rem;
+
+    @media screen and (max-width: 479px) {
+      flex-wrap: wrap;
+      justify-content: space-between;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
   }
 `;
 
@@ -83,8 +90,16 @@ const Year = styled.div<yearProps>`
   cursor: pointer;
   transition: all 0.2s ease;
 
+  @media screen and (max-width: 479px) {
+    padding: 0.3rem 0.7rem;
+  }
+
   & + & {
     margin-left: 0.7rem;
+
+    @media screen and (max-width: 479px) {
+      margin-left: 0rem;
+    }
   }
 
   &:hover {
@@ -104,6 +119,10 @@ const Element = styled.div`
     font-family: "Nanum Square R";
     letter-spacing: -1px;
     margin-right: 1.5rem;
+
+    @media screen and (max-width: 479px) {
+      font-size: 0.8rem;
+    }
   }
   .circle {
     width: 0.5rem;
@@ -111,8 +130,17 @@ const Element = styled.div`
     border: 2px solid #3183ff;
     border-radius: 50%;
     margin-right: 1rem;
+
+    @media screen and (max-width: 479px) {
+      margin-right: 0.7rem;
+    }
   }
   .content {
     font-size: 0.9rem;
+
+    @media screen and (max-width: 479px) {
+      width: 70%;
+      font-size: 0.8rem;
+    }
   }
 `;

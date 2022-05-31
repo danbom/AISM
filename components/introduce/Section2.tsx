@@ -106,13 +106,32 @@ const S2 = styled(Section)`
     font-size: 1.2rem;
     margin-bottom: 1rem;
 
+    @media screen and (max-width: 960px) {
+      flex-direction: column;
+      padding: 2rem 0 0 0;
+    }
+
     .text {
       padding: 0 1rem;
       font-family: "Nanum Square R";
       width: 45%;
 
+      @media screen and (max-width: 960px) {
+        width: 80%;
+      }
+
+      @media screen and (max-width: 479px) {
+        width: 90%;
+        padding: 0 0.5rem;
+        font-size: 1rem;
+      }
+
       p {
         font-size: 0.9rem;
+
+        @media screen and (max-width: 479px) {
+          font-size: 0.8rem;
+        }
       }
     }
 
@@ -123,6 +142,10 @@ const S2 = styled(Section)`
     img {
       object-fit: cover;
       width: 55%;
+
+      @media screen and (max-width: 479px) {
+        width: 65%;
+      }
     }
   }
 `;
