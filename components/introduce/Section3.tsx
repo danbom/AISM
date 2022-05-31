@@ -14,43 +14,48 @@ const Section3 = () => {
       <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500">
         <Title>AISM 연혁</Title>
       </div>
-      <div
-        className="years"
-        data-aos="fade-up"
-        data-aos-easing="linear"
-        data-aos-duration="500"
-      >
-        {["2022", "2018", "2017", "2016", "2014", "2013"].map((year, index) => {
-          return (
-            <Year
-              key={year}
-              onClick={(e) => {
-                e.preventDefault();
-                setClickedYear(year);
-              }}
-              clicked={clickedYear === year}
-            >
-              {year}
-            </Year>
-          );
-        })}
-      </div>
-      <div
-        className="box"
-        data-aos="fade-up"
-        data-aos-easing="linear"
-        data-aos-duration="500"
-      >
-        {history.map(
-          (h, index) =>
-            h.date.slice(0, 4) === clickedYear && (
-              <Element key={index}>
-                <div className="circle" />
-                <div className="date">{h.date}</div>
-                <div className="content">{h.content}</div>
-              </Element>
-            )
-        )}
+      <div className="container">
+        <div
+          className="years"
+          data-aos="fade-up"
+          data-aos-easing="linear"
+          data-aos-duration="500"
+        >
+          {["2022", "2018", "2017", "2016", "2014", "2013"].map(
+            (year, index) => {
+              return (
+                <Year
+                  key={year}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setClickedYear(year);
+                  }}
+                  clicked={clickedYear === year}
+                >
+                  {year}
+                </Year>
+              );
+            }
+          )}
+        </div>
+        <div
+          data-aos="fade-up"
+          data-aos-easing="linear"
+          data-aos-duration="500"
+        >
+          {history.map(
+            (h, index) =>
+              h.date.slice(0, 4) === clickedYear && (
+                <Element key={index}>
+                  <div className="row">
+                    <div className="circle" />
+                    <div className="date">{h.date}</div>
+                  </div>
+                  <div className="content">{h.content}</div>
+                </Element>
+              )
+          )}
+        </div>
       </div>
     </S3>
   );
@@ -62,18 +67,26 @@ const S3 = styled(Section)`
   flex-direction: column;
   height: 350px;
 
+  .container {
+    @media screen and (max-width: 479px) {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
   .years {
     display: flex;
     flex-direction: row;
     font-family: "Nanum Square B";
     font-size: 1.1rem;
     margin-bottom: 2rem;
+    width: fit-content;
 
     @media screen and (max-width: 479px) {
-      flex-wrap: wrap;
-      justify-content: space-between;
+      flex-direction: column;
       font-size: 0.9rem;
-      margin-bottom: 1rem;
+      margin-bottom: 0;
+      margin-right: 1.5rem;
     }
   }
 `;
@@ -89,6 +102,7 @@ const Year = styled.div<yearProps>`
   letter-spacing: -1px;
   cursor: pointer;
   transition: all 0.2s ease;
+  width: fit-content;
 
   @media screen and (max-width: 479px) {
     padding: 0.3rem 0.7rem;
@@ -99,6 +113,7 @@ const Year = styled.div<yearProps>`
 
     @media screen and (max-width: 479px) {
       margin-left: 0rem;
+      margin-bottom: 0.5rem;
     }
   }
 
@@ -111,8 +126,19 @@ const Element = styled.div`
   display: flex;
   align-items: center;
 
+  @media screen and (max-width: 479px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   & + & {
     margin-top: 1rem;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   }
 
   .date {
@@ -124,6 +150,7 @@ const Element = styled.div`
       font-size: 0.8rem;
     }
   }
+
   .circle {
     width: 0.5rem;
     height: 0.5rem;
@@ -139,7 +166,6 @@ const Element = styled.div`
     font-size: 0.9rem;
 
     @media screen and (max-width: 479px) {
-      width: 70%;
       font-size: 0.8rem;
     }
   }
