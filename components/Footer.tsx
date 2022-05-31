@@ -45,7 +45,7 @@ const FooterContainer = styled(Section)`
     margin-bottom: 0.7rem;
 
     @media screen and (max-width: 479px) {
-      width: 80%;
+      word-break: keep-all;
       font-size: 0.7rem;
       margin-bottom: 0.5rem;
     }
