@@ -113,7 +113,7 @@ const Year = styled.div<yearProps>`
 
     @media screen and (max-width: 479px) {
       margin-left: 0rem;
-      margin-bottom: 0.5rem;
+      margin-top: 0.5rem;
     }
   }
 
@@ -167,6 +167,7 @@ const Element = styled.div`
 
     @media screen and (max-width: 479px) {
       font-size: 0.8rem;
+      word-break: keep-all;
     }
   }
 `;
