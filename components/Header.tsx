@@ -78,11 +78,11 @@ const Header = () => {
           </Grid>
           <Grid xs justify="flex-end">
             <MenuBtn onClick={toggleExpended}>
-              {/* {expended ? (
-                <CloseSquare set="light" primaryColor="#212121" />
+              {expended ? (
+                <div className="icon">×</div>
               ) : (
-                <Category set="light" primaryColor="#212121" />
-              )} */}
+                <div className="icon">≡</div>
+              )}
             </MenuBtn>
           </Grid>
         </Container>
@@ -93,23 +93,23 @@ const Header = () => {
             <Grid.Container direction="column" gap={1}>
               {ExpendedMenu(
                 // <Work set="light" primaryColor="#212121" />,
-                "introduce"
+                "소개"
               )}
               {ExpendedMenu(
                 // <Paper set="light" primaryColor="#212121" />,
-                "program"
+                "교육 프로그램"
               )}
               {ExpendedMenu(
                 // <People set="light" primaryColor="#212121" />,
-                "instructor"
+                "강사진"
               )}
               {ExpendedMenu(
                 // <InfoSquare set="light" primaryColor="#212121" />,
-                "notice"
+                "공지사항"
               )}
               {ExpendedMenu(
                 // <Message set="light" primaryColor="#212121" />,
-                "faq"
+                "자주 묻는 질문"
               )}
             </Grid.Container>
           </Container>
@@ -203,6 +203,10 @@ const MenuBtn = styled.button`
 
   &:hover {
     background-color: rgba(2, 32, 71, 0.1);
+  }
+
+  .icon {
+    font-size: 2rem;
   }
 `;
 
