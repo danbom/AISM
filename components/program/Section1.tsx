@@ -1,4 +1,7 @@
+import Link from "next/link";
 import styled from "styled-components";
+
+import performanceSpecialistCourse from "../../data/performanceSpecialistCourse.json";
 
 import Section from "../Section";
 import Title from "../Title";
@@ -15,7 +18,10 @@ const Section1 = () => {
           data-aos-delay="100"
           className="title"
         >
-          <Title>Performance Specialist 코스 ✨</Title>
+          <FullTitle>
+            Performance Specialist 코스
+            <img src="/static/image/icon/sparkles.png" />
+          </FullTitle>
         </div>
         <div
           data-aos="fade-up"
@@ -29,25 +35,26 @@ const Section1 = () => {
           것입니다!
         </div>
       </div>
-      <div className="courses">
-        <Course>
-          <img src="/static/image/program/1.png" />
-          <div className="title">Basic Course</div>
-          <div className="time">180시간 12주 교육</div>
-          <Star />
-        </Course>
-        <Course>
-          <img src="/static/image/program/2.png" />
-          <div className="title">Intermediate Course</div>
-          <div className="time">180시간 12주 교육</div>
-          <Star />
-        </Course>
-        <Course>
-          <img src="/static/image/program/3.png" />
-          <div className="title">Advanced Course</div>
-          <div className="time">180시간 12주 교육</div>
-          <Star />
-        </Course>
+      <div
+        className="courses"
+        data-aos="fade-up"
+        data-aos-easing="linear"
+        data-aos-duration="500"
+        data-aos-delay="200"
+      >
+        {performanceSpecialistCourse.map((course, index) => (
+          <Link
+            key={index}
+            href={`program/performanceSpecialistCourse/${course.title}`}
+          >
+            <Course>
+              <img src={`/static/image/program/${index + 1}.png`} />
+              <div className="title">{course.title}</div>
+              <div className="time">{course.content}</div>
+              <Star />
+            </Course>
+          </Link>
+        ))}
       </div>
     </S1>
   );
@@ -60,18 +67,24 @@ const S1 = styled(Section)`
   justify-content: center;
   align-items: flex-start;
 
-  @media screen and (max-width: 960px) {
-  }
-
   .title {
     font-family: "Nanum Square EB";
     font-size: 1.1rem;
     letter-spacing: -1.2px;
+
+    img {
+      margin-left: 0.3rem;
+      width: 1.4rem;
+
+      @media screen and (max-width: 479px) {
+        display: none;
+      }
+    }
   }
 
   .subtitle {
     font-family: "Nanum Square R";
-    font-size: 1rem;
+    font-size: 0.9rem;
     letter-spacing: -1.2px;
     margin-top: -1.5rem;
     margin-bottom: 1rem;
@@ -82,10 +95,18 @@ const S1 = styled(Section)`
   }
 `;
 
+const FullTitle = styled(Title)`
+  @media screen and (max-width: 479px) {
+    width: 100%;
+  }
+`;
+
 const Course = styled.div`
+  cursor: pointer;
+
   .time {
     font-family: "Nanum Square R";
-    font-size: 1rem;
+    font-size: 0.9rem;
     letter-spacing: -1px;
   }
 

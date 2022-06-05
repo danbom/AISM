@@ -14,9 +14,9 @@ const T = styled.div`
   margin-bottom: 2rem;
 
   @media screen and (max-width: 479px) {
+    width: 80%;
     font-size: 1.3rem;
     line-height: 1.6rem;
-    width: 80%;
     word-break: keep-all;
   }
 `;

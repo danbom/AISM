@@ -1,4 +1,7 @@
+import Link from "next/link";
 import styled from "styled-components";
+
+import expertCourse from "../../data/expertCourse.json";
 
 import Section from "../Section";
 import Title from "../Title";
@@ -11,34 +14,38 @@ const Section2 = () => {
           data-aos="fade-up"
           data-aos-easing="linear"
           data-aos-duration="500"
-          data-aos-delay="100"
+          data-aos-delay="250"
           className="title"
         >
-          <Title>전문가 코스 ⛳</Title>
+          <Title>
+            전문가 코스
+            <img src="/static/image/icon/flag-in-hole.png" />
+          </Title>
         </div>
         <div
           data-aos="fade-up"
           data-aos-easing="linear"
           data-aos-duration="500"
-          data-aos-delay="150"
+          data-aos-delay="300"
           className="subtitle"
         >
           아무것도 몰라도 따라오다 보면 전문가가 될 수 있습니다!
         </div>
       </div>
-      <div className="courses">
-        <Course>
-          <img src="/static/image/program/4.png" />
-          <div className="title">골프 전문가 과정</div>
-        </Course>
-        <Course>
-          <img src="/static/image/program/5.png" />
-          <div className="title">필라테스 전문가 과정</div>
-        </Course>
-        <Course>
-          <img src="/static/image/program/6.png" />
-          <div className="title">체형 분석 전문가 과정</div>
-        </Course>
+      <div
+        className="courses"
+        data-aos="fade-up"
+        data-aos-easing="linear"
+        data-aos-duration="500"
+      >
+        {expertCourse.map((course, index) => (
+          <Link key={index} href={`program/expertCourse/${course.title}`}>
+            <Course>
+              <img src={`/static/image/program/${index + 4}.png`} />
+              <div className="title">{course.title}</div>
+            </Course>
+          </Link>
+        ))}
       </div>
     </S2>
   );
@@ -58,11 +65,16 @@ const S2 = styled(Section)`
     font-family: "Nanum Square EB";
     font-size: 1.1rem;
     letter-spacing: -1.2px;
+
+    img {
+      margin-left: 0.5rem;
+      width: 1.4rem;
+    }
   }
 
   .subtitle {
     font-family: "Nanum Square R";
-    font-size: 1rem;
+    font-size: 0.9rem;
     letter-spacing: -1.2px;
     margin-top: -1.5rem;
     margin-bottom: 1rem;
@@ -74,6 +86,7 @@ const S2 = styled(Section)`
 `;
 
 const Course = styled.div`
+  cursor: pointer;
   .time {
     font-family: "Nanum Square R";
     font-size: 1rem;
