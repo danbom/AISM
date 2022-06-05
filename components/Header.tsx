@@ -31,9 +31,12 @@ const Header = () => {
     </Link>
   );
 
-  const ExpendedMenu = (/*(icon: JSX.Element, */ title: string) => (
+  const ExpendedMenu = (
+    /*(icon: JSX.Element, */ title: string,
+    link: string
+  ) => (
     <div>
-      <Link href={`/${title}`}>
+      <Link href={`/${link}`}>
         <ExpendedMenuBtn onClick={toggleExpended}>
           {/* {icon} */}
           <MenuText>{title}</MenuText>
@@ -93,23 +96,28 @@ const Header = () => {
             <Grid.Container direction="column" gap={1}>
               {ExpendedMenu(
                 // <Work set="light" primaryColor="#212121" />,
-                "소개"
+                "소개",
+                "introduce"
               )}
               {ExpendedMenu(
                 // <Paper set="light" primaryColor="#212121" />,
-                "교육 프로그램"
+                "교육 프로그램",
+                "program"
               )}
               {ExpendedMenu(
                 // <People set="light" primaryColor="#212121" />,
-                "강사진"
+                "강사진",
+                "instructor"
               )}
               {ExpendedMenu(
                 // <InfoSquare set="light" primaryColor="#212121" />,
-                "공지사항"
+                "공지사항",
+                "notice"
               )}
               {ExpendedMenu(
                 // <Message set="light" primaryColor="#212121" />,
-                "자주 묻는 질문"
+                "자주 묻는 질문",
+                "faq"
               )}
             </Grid.Container>
           </Container>

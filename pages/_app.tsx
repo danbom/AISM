@@ -10,6 +10,7 @@ import Footer from "../components/Footer";
 
 import "../styles/globals.css";
 import "aos/dist/aos.css";
+import "remixicon/fonts/remixicon.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
