@@ -108,6 +108,7 @@ const Program: NextPage = () => {
 };
 
 export default Program;
+
 const CourseContainer = styled.div`
   width: 100%;
   display: flex;
@@ -156,21 +157,20 @@ const CourseContainer = styled.div`
     background-color: #e5503c;
     color: #ffffff;
     padding: 0.2rem 0.3rem;
-    font-family: "Nanum Square EB";
+    font-weight: 700;
     font-size: 0.7rem;
     border-radius: 5px;
     margin-bottom: 0.5rem;
 
     @media screen and (max-width: 479px) {
       padding: 0.2rem 0.3rem;
-      font-family: "Nanum Square EB";
       font-size: 0.5rem;
       margin-bottom: 0;
     }
   }
 
   .title {
-    font-family: "Nanum Square EB";
+    font-weight: 700;
     font-size: 1.7rem;
     margin-bottom: 2rem;
 
@@ -181,8 +181,8 @@ const CourseContainer = styled.div`
   }
 
   .time {
-    font-family: "Nanum Square R";
-    font-size: 0.9rem;
+    font-weight: 300;
+    font-size: 0.8rem;
     display: flex;
     margin-bottom: 0.2rem;
 
@@ -198,8 +198,8 @@ const CourseContainer = styled.div`
 
   .instructor {
     display: flex;
-    font-family: "Nanum Square R";
-    font-size: 0.9rem;
+    font-weight: 300;
+    font-size: 0.8rem;
     margin-bottom: 0.2rem;
 
     @media screen and (max-width: 479px) {
@@ -243,13 +243,13 @@ const CourseContainer = styled.div`
     }
 
     .subtitle {
-      font-family: "Nanum Square B";
+      font-weight: 500;
       font-size: 1.3rem;
       margin-bottom: 1.5rem;
     }
 
     .desc {
-      font-family: "Nanum Square R";
+      font-weight: 400;
       font-size: 0.9rem;
       margin-bottom: 1rem;
 
@@ -275,8 +275,7 @@ const CourseContainer = styled.div`
         width: 4rem;
         display: flex;
         text-align: center;
-        font-family: "Nanum Square B";
-        font-size: 1.1rem;
+        font-weight: 500;
         margin-right: 3rem;
 
         @media screen and (max-width: 479px) {
@@ -286,7 +285,7 @@ const CourseContainer = styled.div`
       }
 
       .keyword {
-        font-family: "Nanum Square R";
+        font-weight: 400;
         font-size: 0.9rem;
         margin-bottom: 0.5rem;
       }
@@ -306,7 +305,7 @@ const CourseContainer = styled.div`
 
       p {
         width: 40%;
-        font-family: "Nanum Square B";
+        font-weight: 500;
         font-size: 0.9rem;
         text-align: center;
 
@@ -328,7 +327,7 @@ const CourseContainer = styled.div`
     }
 
     .title {
-      font-family: "Nanum Square B";
+      font-weight: 500;
       font-size: 1.3rem;
       margin-bottom: 1.5rem;
     }
@@ -341,8 +340,8 @@ const CourseContainer = styled.div`
 `;
 
 const Tag = styled.div`
-  font-family: "Nanum Square R";
-  font-size: 0.9rem;
+  font-weight: 300;
+  font-size: 0.8rem;
 
   @media screen and (max-width: 479px) {
     font-size: 0.8rem;
@@ -357,7 +356,7 @@ const Cur = styled.div`
   display: flex;
   align-items: center;
   padding: 0.7rem 1rem;
-  font-family: "Nanum Square R";
+  font-weight: 400;
   font-size: 0.9rem;
 
   @media screen and (max-width: 479px) {
@@ -385,8 +384,7 @@ const Menu = styled.div<MenuProps>`
   border-bottom: ${(props) =>
     props.curMenu == true ? "1px solid #111111" : ""};
   color: #111111;
-  font-family: ${(props) =>
-    props.curMenu == true ? "Nanum Square B" : "Nanum Square R"};
+  font-weight: ${(props) => (props.curMenu == true ? "500" : "400")};
   font-size: 0.9rem;
   margin-right: 1rem;
   cursor: pointer;

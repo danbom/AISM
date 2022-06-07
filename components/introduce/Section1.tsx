@@ -10,7 +10,6 @@ const Section1 = () => {
         data-aos="fade-up"
         data-aos-easing="linear"
         data-aos-duration="500"
-        data-aos-delay="100"
         className="title"
       >
         아래와 같은 고민을 가지고 있다면 AISM으로 시작하세요!
@@ -19,7 +18,6 @@ const Section1 = () => {
         data-aos="fade-up"
         data-aos-easing="linear"
         data-aos-duration="500"
-        data-aos-delay="150"
         className="typeit"
       >
         <TypeIt
@@ -40,7 +38,6 @@ const Section1 = () => {
         data-aos="fade-up"
         data-aos-easing="linear"
         data-aos-duration="500"
-        data-aos-delay="200"
         className="tags"
       >
         <Tag className="tag"># 물리 치료 기법</Tag>
@@ -59,7 +56,7 @@ const S1 = styled(Section)`
   align-items: flex-start;
 
   .title {
-    font-family: "Nanum Square EB";
+    font-weight: 700;
     font-size: 1.5rem;
     line-height: 2.8rem;
     letter-spacing: -1.6px;
@@ -72,14 +69,14 @@ const S1 = styled(Section)`
   }
 
   .typeit {
-    font-family: "Nanum Square B";
+    font-weight: 500;
     color: #2f3438ac;
     width: 30rem;
     border: 2px solid #696c6e;
     border-radius: 5px;
     padding: 0.5rem 0.8rem;
     font-size: 1.2rem;
-    letter-spacing: -1.6px;
+    letter-spacing: -1px;
     margin: 0 0 1.2rem 0;
 
     @media screen and (max-width: 479px) {
@@ -100,7 +97,7 @@ const Tag = styled.div`
   border-radius: 20px;
   padding: 0.4rem 0.8rem;
   font-size: 0.8rem;
-  font-family: "Nanum Square R";
+  font-weight: 300;
 
   @media screen and (max-width: 479px) {
     font-size: 0.6rem;

@@ -1,10 +1,9 @@
 import type { NextPage } from "next";
-import { Grid } from "@nextui-org/react";
 
-import noticeData from "../../data/noticeData.json";
+import Preparing from "../../components/Preparing";
 
 const notice: NextPage = () => {
-  return <div></div>;
+  return <Preparing />;
 };
 
 export default notice;

@@ -1,46 +1,8 @@
-@font-face {
-  font-family: "Nanum Square EB";
-  src: url("/fonts/NanumSquareEB.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Nanum Square B";
-  src: url("/fonts/NanumSquareB.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Nanum Square R";
-  src: url("/fonts/NanumSquareR.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Nanum Square L";
-  src: url("/fonts/NanumSquareL.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Nanum Square acEB";
-  src: url("/fonts/NanumSquare_acEB.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Nanum Square acB";
-  src: url("/fonts/NanumSquare_acB.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Nanum Square acR";
-  src: url("/fonts/NanumSquare_acR.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Nanum Square acL";
-  src: url("/fonts/NanumSquare_acL.ttf") format("truetype");
-}
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
 
 main {
   background: #fff;
-  color: #2f3438;
+  color: rgb(69, 79, 93);
   position: relative;
 }
 
@@ -49,7 +11,6 @@ body,
 p {
   padding: 0;
   margin: 0;
-  font-family: "Nanum Square B";
   overflow-x: hidden;
 }
 
@@ -60,6 +21,7 @@ a {
 
 * {
   box-sizing: border-box;
+  font-family: "Noto Sans KR" !important;
 }
 
 *::-webkit-scrollbar {
@@ -79,7 +41,6 @@ a {
 .swiper-rtl .swiper-button-prev:after,
 .swiper-button-prev:after,
 .swiper-rtl .swiper-button-next:after {
-  font-family: "Nanum Square EB";
   font-size: 1.3rem !important;
   color: #fff;
 }

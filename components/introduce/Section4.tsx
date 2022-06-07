@@ -201,7 +201,7 @@ const S4 = styled(Section)`
     position: absolute;
     bottom: 0.3rem;
     right: 1rem;
-    font-family: "Nanum Square R";
+    font-weight: 100;
     font-size: 0.8rem;
     color: #fff;
 

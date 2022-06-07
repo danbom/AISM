@@ -6,12 +6,7 @@ import Title from "../Title";
 const Section2 = () => {
   return (
     <S2>
-      <div
-        data-aos="fade-up"
-        data-aos-easing="linear"
-        data-aos-duration="500"
-        data-aos-delay="250"
-      >
+      <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500">
         <Title>AISM은 건강 관리 교육의 새로운 역사를 쓰고 있습니다.</Title>
       </div>
 
@@ -21,7 +16,6 @@ const Section2 = () => {
           data-aos="fade-up"
           data-aos-easing="linear"
           data-aos-duration="500"
-          data-aos-delay="300"
         >
           <div className="text">
             <span className="highlight">특허 받은</span> 해부학 교구 수업
@@ -101,7 +95,7 @@ const S2 = styled(Section)`
     align-items: center;
     background: #f1f3f5;
     border-radius: 15px;
-    font-family: "Nanum Square B";
+    font-weight: 600;
     letter-spacing: -0.6px;
     font-size: 1.2rem;
     margin-bottom: 1rem;
@@ -113,7 +107,6 @@ const S2 = styled(Section)`
 
     .text {
       padding: 0 1rem;
-      font-family: "Nanum Square R";
       width: 45%;
 
       @media screen and (max-width: 960px) {

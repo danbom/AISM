@@ -77,7 +77,7 @@ const S3 = styled(Section)`
   .years {
     display: flex;
     flex-direction: row;
-    font-family: "Nanum Square B";
+    font-weight: 500;
     font-size: 1.1rem;
     margin-bottom: 2rem;
     width: fit-content;
@@ -142,8 +142,8 @@ const Element = styled.div`
   }
 
   .date {
-    font-family: "Nanum Square R";
-    letter-spacing: -1px;
+    font-weight: 500;
+    letter-spacing: -0.5px;
     margin-right: 1.5rem;
 
     @media screen and (max-width: 479px) {

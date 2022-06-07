@@ -31,7 +31,7 @@ export default Footer;
 const FooterContainer = styled(Section)`
   margin-top: 3rem;
   flex-direction: column;
-  font-family: "Nanum Square R";
+  font-weight: 400;
   font-size: 0.8rem;
   height: 150px;
   justify-content: center;

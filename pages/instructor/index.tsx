@@ -1,7 +1,8 @@
 import type { NextPage } from "next";
+import Preparing from "../../components/Preparing";
 
 const instructor: NextPage = () => {
-  return <div></div>;
+  return <Preparing />;
 };
 
 export default instructor;

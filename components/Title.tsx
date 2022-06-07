@@ -8,7 +8,7 @@ const T = styled.div`
   position: relative;
   display: flex;
   align-items: baseline;
-  font-family: "Nanum Square EB";
+  font-weight: 700;
   letter-spacing: -1.6px;
   font-size: 1.5rem;
   margin-bottom: 2rem;

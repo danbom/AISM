@@ -13,7 +13,6 @@ const Section2 = () => {
           data-aos="fade-up"
           data-aos-easing="linear"
           data-aos-duration="500"
-          data-aos-delay="250"
           className="title"
         >
           <Title>
@@ -25,7 +24,6 @@ const Section2 = () => {
           data-aos="fade-up"
           data-aos-easing="linear"
           data-aos-duration="500"
-          data-aos-delay="300"
           className="subtitle"
         >
           아무것도 몰라도 따라오다 보면 전문가가 될 수 있습니다!
@@ -58,7 +56,7 @@ const S2 = styled(Section)`
   align-items: flex-start;
 
   .title {
-    font-family: "Nanum Square EB";
+    font-weight: 700;
     font-size: 1.1rem;
     letter-spacing: -1.2px;
 
@@ -67,7 +65,7 @@ const S2 = styled(Section)`
     }
 
     img {
-      margin-left: 0.5rem;
+      margin-left: 0.3rem;
       width: 1.4rem;
 
       @media screen and (max-width: 479px) {
@@ -77,7 +75,7 @@ const S2 = styled(Section)`
   }
 
   .subtitle {
-    font-family: "Nanum Square R";
+    font-weight: 400;
     font-size: 0.9rem;
     letter-spacing: -1.2px;
     margin-top: -1.5rem;
@@ -101,7 +99,6 @@ const Title = styled.div`
   position: relative;
   display: flex;
   align-items: baseline;
-  font-family: "Nanum Square EB";
   letter-spacing: -1.6px;
   font-size: 1.5rem;
   margin-bottom: 2rem;
@@ -117,8 +114,8 @@ const Course = styled.div`
   cursor: pointer;
 
   .time {
-    font-family: "Nanum Square R";
-    font-size: 1rem;
+    font-weight: 300;
+    font-size: 0.9rem;
     letter-spacing: -1px;
 
     @media screen and (max-width: 479px) {
@@ -128,11 +125,6 @@ const Course = styled.div`
 
   img {
     border-radius: 10px;
-    margin-bottom: 0.5rem;
-
-    @media screen and (max-width: 479px) {
-      margin-bottom: 0;
-    }
   }
 
   & + & {
@@ -140,7 +132,7 @@ const Course = styled.div`
 
     @media screen and (max-width: 479px) {
       margin-left: 0rem;
-      margin-top: 1.5rem;
+      margin-top: 1rem;
     }
   }
 `;

@@ -22,7 +22,6 @@ const GotoContainer = styled.div`
   right: 2rem;
   padding: 0.9rem 1.1rem;
   border-radius: 30px;
-  font-family: "Nanum Square B";
   font-size: 1.1rem;
   color: #fff;
   background: #3a89ff;

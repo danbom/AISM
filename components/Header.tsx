@@ -243,6 +243,6 @@ const ExpendedMenuBtn = styled(MenuBtn)`
 const MenuText = styled.p`
   margin: 0;
   padding: 0;
-  font-family: "Nanum Square B";
+  font-weight: 600;
   font-size: 1rem;
 `;
