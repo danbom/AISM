@@ -124,6 +124,7 @@ const S2 = styled(Section)`
 
         @media screen and (max-width: 479px) {
           font-size: 0.8rem;
+          margin: 1rem 0;
         }
       }
     }
