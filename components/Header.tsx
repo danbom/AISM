@@ -174,6 +174,7 @@ const BigGrid = styled(StyledGrid)<IsTopProps>`
 `;
 
 const SmallGrid = styled(StyledGrid)<IsTopProps>`
+  background: hsla(0, 0%, 100%, 0.95);
   @media screen and (min-width: 960px) {
     display: none;
   }
@@ -211,6 +212,10 @@ const MenuBtn = styled.button`
 
   &:hover {
     background-color: rgba(2, 32, 71, 0.1);
+
+    @media screen and (max-width: 479px) {
+      background-color: transparent;
+    }
   }
 
   .icon {

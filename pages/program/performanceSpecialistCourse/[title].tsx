@@ -13,7 +13,6 @@ const Program: NextPage = () => {
 
   useEffect(() => {
     setProgramTitle(title ? title : "");
-    return () => {};
   }, [title]);
 
   return (
@@ -240,6 +239,10 @@ const CourseContainer = styled.div`
     display: flex;
     flex-direction: column;
 
+    @media screen and (max-width: 479px) {
+      padding: 5% 15%;
+    }
+
     .subtitle {
       font-family: "Nanum Square B";
       font-size: 1.3rem;
@@ -250,6 +253,10 @@ const CourseContainer = styled.div`
       font-family: "Nanum Square R";
       font-size: 0.9rem;
       margin-bottom: 1rem;
+
+      @media screen and (max-width: 479px) {
+        margin-bottom: 2rem;
+      }
     }
 
     .keywords-container {
@@ -259,6 +266,12 @@ const CourseContainer = styled.div`
       border-radius: 10px;
       margin-bottom: 1rem;
 
+      @media screen and (max-width: 479px) {
+        flex-direction: column;
+        align-items: center;
+        padding: 1.5rem 2rem;
+      }
+
       .we-learn {
         width: 4rem;
         display: flex;
@@ -266,6 +279,11 @@ const CourseContainer = styled.div`
         font-family: "Nanum Square B";
         font-size: 1.1rem;
         margin-right: 3rem;
+
+        @media screen and (max-width: 479px) {
+          margin-right: 0;
+          margin-bottom: 1rem;
+        }
       }
 
       .keyword {
@@ -283,11 +301,19 @@ const CourseContainer = styled.div`
       color: #ffffff;
       border-radius: 10px;
 
+      @media screen and (max-width: 479px) {
+        padding: 0.5rem 1rem;
+      }
+
       p {
         width: 40%;
         font-family: "Nanum Square B";
         font-size: 0.9rem;
         text-align: center;
+
+        @media screen and (max-width: 479px) {
+          width: 100%;
+        }
       }
     }
   }
@@ -297,6 +323,10 @@ const CourseContainer = styled.div`
     padding: 3% 40% 3% 15%;
     display: flex;
     flex-direction: column;
+
+    @media screen and (max-width: 479px) {
+      padding: 5% 15%;
+    }
 
     .title {
       font-family: "Nanum Square B";
@@ -330,6 +360,10 @@ const Cur = styled.div`
   padding: 0.7rem 1rem;
   font-family: "Nanum Square R";
   font-size: 0.9rem;
+
+  @media screen and (max-width: 479px) {
+    font-size: 0.8rem;
+  }
 
   i {
     font-size: 1rem;
