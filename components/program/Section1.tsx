@@ -4,7 +4,6 @@ import styled from "styled-components";
 import performanceSpecialistCourse from "../../data/performanceSpecialistCourse.json";
 
 import Section from "../Section";
-import Title from "../Title";
 import Star from "../../components/Star";
 
 const Section1 = () => {
@@ -18,10 +17,10 @@ const Section1 = () => {
           data-aos-delay="100"
           className="title"
         >
-          <FullTitle>
+          <Title>
             Performance Specialist 코스
             <img src="/static/image/icon/sparkles.png" />
-          </FullTitle>
+          </Title>
         </div>
         <div
           data-aos="fade-up"
@@ -72,6 +71,10 @@ const S1 = styled(Section)`
     font-size: 1.1rem;
     letter-spacing: -1.2px;
 
+    @media screen and (max-width: 479px) {
+      font-size: 1rem;
+    }
+
     img {
       margin-left: 0.3rem;
       width: 1.4rem;
@@ -88,16 +91,34 @@ const S1 = styled(Section)`
     letter-spacing: -1.2px;
     margin-top: -1.5rem;
     margin-bottom: 1rem;
+
+    @media screen and (max-width: 479px) {
+      font-size: 0.8rem;
+    }
   }
 
   .courses {
     display: flex;
+
+    @media screen and (max-width: 479px) {
+      flex-direction: column;
+    }
   }
 `;
 
-const FullTitle = styled(Title)`
+const Title = styled.div`
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  font-family: "Nanum Square EB";
+  letter-spacing: -1.6px;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+
   @media screen and (max-width: 479px) {
-    width: 100%;
+    font-size: 1.3rem;
+    line-height: 1.6rem;
+    word-break: keep-all;
   }
 `;
 
@@ -108,6 +129,10 @@ const Course = styled.div`
     font-family: "Nanum Square R";
     font-size: 0.9rem;
     letter-spacing: -1px;
+
+    @media screen and (max-width: 479px) {
+      font-size: 0.8rem;
+    }
   }
 
   img {
@@ -116,5 +141,10 @@ const Course = styled.div`
 
   & + & {
     margin-left: 1rem;
+
+    @media screen and (max-width: 479px) {
+      margin-left: 0rem;
+      margin-top: 1rem;
+    }
   }
 `;

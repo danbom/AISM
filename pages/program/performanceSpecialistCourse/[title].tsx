@@ -123,16 +123,34 @@ const CourseContainer = styled.div`
     color: #ffffff;
     display: flex;
     align-items: center;
+
+    @media screen and (max-width: 479px) {
+      height: 25rem;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
   }
 
   .ml-2 {
     margin-left: 2%;
+
+    @media screen and (max-width: 479px) {
+      margin-left: 0;
+      width: 85%;
+    }
   }
 
   img {
     margin-left: 15%;
     width: 27rem;
     border-radius: 10px;
+
+    @media screen and (max-width: 479px) {
+      margin-left: 0;
+      width: 85%;
+      margin-bottom: 1rem;
+    }
   }
 
   .tag {
@@ -144,12 +162,24 @@ const CourseContainer = styled.div`
     font-size: 0.7rem;
     border-radius: 5px;
     margin-bottom: 0.5rem;
+
+    @media screen and (max-width: 479px) {
+      padding: 0.2rem 0.3rem;
+      font-family: "Nanum Square EB";
+      font-size: 0.5rem;
+      margin-bottom: 0;
+    }
   }
 
   .title {
     font-family: "Nanum Square EB";
     font-size: 1.7rem;
     margin-bottom: 2rem;
+
+    @media screen and (max-width: 479px) {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
   }
 
   .time {
@@ -157,6 +187,11 @@ const CourseContainer = styled.div`
     font-size: 0.9rem;
     display: flex;
     margin-bottom: 0.2rem;
+
+    @media screen and (max-width: 479px) {
+      font-size: 0.8rem;
+      margin-bottom: 0.1rem;
+    }
 
     i {
       margin-right: 0.4rem;
@@ -169,6 +204,11 @@ const CourseContainer = styled.div`
     font-size: 0.9rem;
     margin-bottom: 0.2rem;
 
+    @media screen and (max-width: 479px) {
+      font-size: 0.8rem;
+      margin-bottom: 0.1rem;
+    }
+
     i {
       margin-right: 0.4rem;
     }
@@ -176,6 +216,10 @@ const CourseContainer = styled.div`
 
   .tags {
     display: flex;
+
+    @media screen and (max-width: 479px) {
+      font-size: 0.8rem;
+    }
 
     i {
       margin-right: 0.4rem;
@@ -270,6 +314,10 @@ const CourseContainer = styled.div`
 const Tag = styled.div`
   font-family: "Nanum Square R";
   font-size: 0.9rem;
+
+  @media screen and (max-width: 479px) {
+    font-size: 0.8rem;
+  }
 
   & + & {
     margin-left: 0.2rem;

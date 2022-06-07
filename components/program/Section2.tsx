@@ -4,7 +4,6 @@ import styled from "styled-components";
 import expertCourse from "../../data/expertCourse.json";
 
 import Section from "../Section";
-import Title from "../Title";
 
 const Section2 = () => {
   return (
@@ -58,17 +57,22 @@ const S2 = styled(Section)`
   justify-content: center;
   align-items: flex-start;
 
-  @media screen and (max-width: 960px) {
-  }
-
   .title {
     font-family: "Nanum Square EB";
     font-size: 1.1rem;
     letter-spacing: -1.2px;
 
+    @media screen and (max-width: 479px) {
+      font-size: 1rem;
+    }
+
     img {
       margin-left: 0.5rem;
       width: 1.4rem;
+
+      @media screen and (max-width: 479px) {
+        display: none;
+      }
     }
   }
 
@@ -78,27 +82,65 @@ const S2 = styled(Section)`
     letter-spacing: -1.2px;
     margin-top: -1.5rem;
     margin-bottom: 1rem;
+
+    @media screen and (max-width: 479px) {
+      font-size: 0.8rem;
+    }
   }
 
   .courses {
     display: flex;
+
+    @media screen and (max-width: 479px) {
+      flex-direction: column;
+    }
+  }
+`;
+
+const Title = styled.div`
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  font-family: "Nanum Square EB";
+  letter-spacing: -1.6px;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+
+  @media screen and (max-width: 479px) {
+    font-size: 1.3rem;
+    line-height: 1.6rem;
+    word-break: keep-all;
   }
 `;
 
 const Course = styled.div`
   cursor: pointer;
+
   .time {
     font-family: "Nanum Square R";
     font-size: 1rem;
     letter-spacing: -1px;
+
+    @media screen and (max-width: 479px) {
+      font-size: 0.8rem;
+    }
   }
 
   img {
     border-radius: 10px;
     margin-bottom: 0.5rem;
+
+    @media screen and (max-width: 479px) {
+      margin-bottom: 0;
+    }
   }
 
   & + & {
     margin-left: 1rem;
+
+    @media screen and (max-width: 479px) {
+      margin-left: 0rem;
+      margin-top: 1.5rem;
+    }
   }
 `;
